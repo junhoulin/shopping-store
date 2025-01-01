@@ -4,7 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/all.scss'],
   plugins: [
-    // 插件路徑
     '~/plugins/iconify.js',
-  ]
+  ],
+  components: {
+    dirs: ['~/components']
+  }
+  
 })

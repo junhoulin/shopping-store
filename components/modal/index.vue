@@ -3,11 +3,11 @@
       <div class="overlay"></div>
   </div>
   <!-- modal -->
-  <div :class="modal" data-modal>
+  <div class="modal" v-if="isActiveModal">
       <div class="modal-close-overlay" @click="toggleClass"></div>
       <div class="modal-content">
           <div class="modal-close-btn" @click="toggleClass">
-              <Icon icon="typcn:delete" width="36" height="36" style="color: hsl(353, 100%, 78%);" />
+              <Icon icon="typcn:delete" class="iconDelete" />
           </div>
           <div class="newsletter-img">
               <img src="~public/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
@@ -30,18 +30,12 @@
 </template>
 
 <script setup>
-const isActive = ref(true);
+const isActiveModal = ref(true);
 
 const toggleClass = () => {
-  isActive.value = !isActive.value;
+  isActiveModal.value = !isActiveModal.value;
 };
 
-const modal = computed(() => {
-  return {
-      'modal': isActive.value,
-      'modal closed': !isActive.value
-  };
-});
 </script>
 
 <style lang="scss" scoped>
@@ -76,14 +70,16 @@ const modal = computed(() => {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
   z-index: 10;
   animation: popup 1s ease-in-out 5s forwards;
-  &.closed {
-      display: none;
-  }
-} 
+}
+
+.iconDelete {
+  width: 36px;
+  height: 36px;
+  color: hsl(353, 100%, 78%);
+}
 
 @keyframes popup{
   0% {

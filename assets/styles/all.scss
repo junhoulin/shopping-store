@@ -1,5 +1,5 @@
+@use "~/assets/styles/variables" as *;
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-@import "./variables";
 
 *, *::before, *::after {
     margin: 0;
@@ -30,3 +30,25 @@ input {
 }
   
 input::placeholder { font: inherit; }
+
+.container {
+  padding: 0px 15px;
+}
+
+// 滾輪設定
+.has-scrollbar { padding-bottom: 5px; }
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 3px solid $white;
+  border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: hsl(0, 0%, 90%); }
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 80%); }
