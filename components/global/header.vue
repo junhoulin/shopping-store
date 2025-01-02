@@ -176,7 +176,7 @@
         </nav>
         <!-- mobile-bottom-navigation -->
         <div class="mobile-bottom-navigation">
-            <button class="action-btn" @click="toggleMobileNav">
+            <button class="action-btn" @click="toggleMobileNav('list1')">
                 <Icon icon="gg:menu-round"/>
             </button>
             <button class="action-btn">
@@ -187,16 +187,16 @@
                 <Icon icon="mingcute:love-fill"/>
                 <span class="count">0</span>
             </button>
-            <button class="action-btn">
+            <button class="action-btn" @click="toggleMobileNav('list4')">
                 <Icon icon="mynaui:grid"/>
             </button>
         </div>
         <!-- mobile-navigation-menu -->
-        <nav :class="mobileNav">
+        <nav class="mobile-navigation-menu has-scrollbar" :class="{ active: isActive.list1 }">
             <!-- mobile-navigation-menu-top -->
             <div class="menu-top">
                 <div class="menu-title">Menu</div>
-                <button class="menu-close-btn" @click="toggleMobileNav">
+                <button class="menu-close-btn" @click="toggleMobileNav('list1')">
                     <Icon icon="material-symbols:close" />
                 </button>
             </div>
@@ -311,35 +311,38 @@
                 </ul>
             </div>
         </nav>
+        <!-- sidebar -->
+        <sidebar :is-active-list4="isActive.list4"  @update:isActiveList4="updateIsActiveList4"/>
     </header>
 </template>
 
 <script setup>
-const isActive = ref(false);
+//控制底下導覽列按鈕的視窗
+const isActive = reactive({
+    list1: false,
+    list2: false,
+    list3: false,
+    list4: false,
+});
+const toggleMobileNav = (menu) => {
+    isActive[menu] = !isActive[menu];
+};
+const updateIsActiveList4 = (newValue) => {
+  isActive.list4 = newValue;
+};
+//控制第一個按鈕視窗裡面的元素動畫
 const activeMenu = reactive({
-  list1: false,
-  list2: false,
-  list3: false,
-  list4: false,
-  list5: false,
-  list6: false,
+    list1: false,
+    list2: false,
+    list3: false,
+    list4: false,
+    list5: false,
+    list6: false,
 });
 
 const toggleNavMenu = (menu) => {
-  activeMenu[menu] = !activeMenu[menu];
+    activeMenu[menu] = !activeMenu[menu];
 };
-
-const toggleMobileNav = () => {
-  isActive.value = !isActive.value;
-};
-
-const mobileNav = computed(() => {
-  return {
-      'mobile-navigation-menu has-scrollbar active': isActive.value,
-      'mobile-navigation-menu has-scrollbar': !isActive.value
-  };
-});
-
 </script>
 
 <style lang="scss" scoped>
