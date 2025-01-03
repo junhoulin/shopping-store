@@ -4,6 +4,11 @@
     <banner />
     <category />
     <product />
+    <card />
+    <CardCard01 />
+    <CardService />
+    <CardBlog />
+    <GlobalFooter />
 </template>
 
 <script setup>
