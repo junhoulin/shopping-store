@@ -1,18 +1,28 @@
 <template>
-<!-- 感言 -->
+  <!-- 感言 -->
   <div class="container">
     <div class="testimonials-box">
       <div class="testimonial">
         <h2 class="title">testimonial</h2>
         <div class="testimonial-card">
-          <img src="~public/images/testimonial-1.jpg"
-          alt="alan doe" class="testimonial-banner">
+          <img
+            src="~public/images/testimonial-1.jpg"
+            alt="alan doe"
+            class="testimonial-banner"
+          />
           <p class="testimonial-name">JIM LIN</p>
-          <p class="testimonial-title">CEO & Founder </p>
-          <img src="https://i.postimg.cc/QCSxhM8W/quotes.png" alt="" class="quotation-img" width="26">
+          <p class="testimonial-title">CEO & Founder</p>
+          <img
+            src="https://i.postimg.cc/QCSxhM8W/quotes.png"
+            alt=""
+            class="quotation-img"
+            width="26"
+          />
           <p class="testimonial-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos esse laboriosam quaerat. Perspiciatis, suscipit sint, atque earum cum dicta, dolore magnam rem
-            repellendus facere animi ab! A officia eos architecto.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos esse
+            laboriosam quaerat. Perspiciatis, suscipit sint, atque earum cum
+            dicta, dolore magnam rem repellendus facere animi ab! A officia eos
+            architecto.
           </p>
         </div>
       </div>
@@ -20,13 +30,10 @@
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
-@use "~/assets/styles/variables" as *; 
-
+@use "~/assets/styles/variables" as *;
 
 .title {
   color: $eerie-black;
@@ -58,10 +65,10 @@
 }
 
 .testimonial-name {
-    font-weight: $weight-700;
-    text-transform: uppercase;
-    color: $sonic-silver;
-    margin-bottom: 5px;
+  font-weight: $weight-700;
+  text-transform: uppercase;
+  color: $sonic-silver;
+  margin-bottom: 5px;
 }
 
 .testimonial-title {
@@ -81,5 +88,4 @@
   color: $sonic-silver;
   font-size: $fs-7;
 }
-
 </style>

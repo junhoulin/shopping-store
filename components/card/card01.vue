@@ -2,7 +2,7 @@
   <div class="container">
     <div class="testimonials-box">
       <div class="cta-container">
-        <img src="~public/images/cta-banner.jpg" alt="" class="cta-banner">
+        <img src="~public/images/cta-banner.jpg" alt="" class="cta-banner" />
         <a href="#" class="cta-content">
           <p class="discount">25% discount</p>
           <h2 class="cta-title">Summer collection</h2>
@@ -12,10 +12,10 @@
       </div>
     </div>
   </div>
-</template>~
+</template>
+~
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @use "~/assets/styles/variables" as *;
@@ -38,15 +38,15 @@
   object-fit: cover;
 }
 .cta-content {
-    background: hsla(0, 0%, 100%, .7);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: fit-content;
-    padding: 15px 20px;
-    text-align: center;
-    border-radius: $border-radius-sm;
+  background: hsla(0, 0%, 100%, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: $border-radius-sm;
 }
 
 .discount {
@@ -83,5 +83,26 @@
   margin: auto;
 }
 
+@media (min-width: 480px) {
+  .cta-content {
+    padding: 40px;
+  }
+  .discount {
+    font-size: $fs-8;
+    padding: 5px 10px;
+  }
+  .cta-title {
+    font-size: $fs-2;
+  }
+  .cta-text {
+    font-size: $fs-4;
+  }
+  .cta-btn {
+    font-size: $fs-5;
+  }
 
+  .copyright {
+    font-size: $fs-5;
+  }
+}
 </style>

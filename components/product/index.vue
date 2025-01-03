@@ -8,12 +8,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -24,8 +30,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -40,8 +50,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -56,8 +70,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -74,12 +92,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -90,8 +114,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -106,8 +134,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -122,8 +154,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -145,12 +181,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -161,8 +203,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -177,8 +223,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -193,8 +243,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -211,12 +265,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -227,8 +287,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -243,8 +307,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -259,8 +327,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -282,12 +354,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -298,8 +376,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -314,8 +396,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -330,8 +416,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -348,12 +438,18 @@
           <div class="showcase-container">
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-1.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">Relaxed Short full Sleeve T-Shirt</h4>
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
                 </a>
                 <a href="#" class="showcase-category">Clothes</a>
                 <div class="price-box">
@@ -364,8 +460,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-2.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -380,8 +480,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-3.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -396,8 +500,12 @@
             </div>
             <div class="showcase">
               <a href="#" class="showcase-img-box">
-                <img src="~public/images/products/clothes-4.jpg"
-                alt="睡衣" class="showcase-img" width="70">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
               </a>
               <div class="showcase-content">
                 <a href="#">
@@ -421,51 +529,48 @@
         <div class="showcase-container">
           <div class="showcase">
             <div class="showcase-banner">
-              <img src="~public/images/products/shampoo.jpg"
-              alt="shampoo, conditioner & facewash packs"
-              class="showcase-img">
+              <img
+                src="~public/images/products/shampoo.jpg"
+                alt="shampoo, conditioner & facewash packs"
+                class="showcase-img"
+              />
             </div>
             <div class="showcase-content">
               <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
               </div>
               <a href="#" class="showcase-title">
-                <h3 class="showcase-title">shampoo, conditioner & facewash packs</h3>
+                <h3 class="showcase-title">
+                  shampoo, conditioner & facewash packs
+                </h3>
               </a>
-              
+
               <p class="showcase-desc">
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum 
-                dolor dolor sit amet consectetur Lorem ipsum dolor
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor
+                sit amet consectetur Lorem ipsum dolor
               </p>
-              
+
               <div class="price-box">
                 <p class="price">$150.00</p>
                 <del>$200.00</del>
               </div>
-              
+
               <button class="add-cart-btn">加到購物車</button>
-              
+
               <div class="showcase-status">
                 <div class="wrapper">
-                  <p>
-                    已經售出: <b>20</b>
-                  </p>
-                  <p>
-                    庫存剩下: <b>40</b>
-                  </p>
+                  <p>已經售出: <b>20</b></p>
+                  <p>庫存剩下: <b>40</b></p>
                 </div>
-                <div class="showcase-status-bar">
-                </div>
+                <div class="showcase-status-bar"></div>
               </div>
 
               <div class="countdown-box">
-                <p class="countdown-desc">
-                  即將結束於:
-                </p>
+                <p class="countdown-desc">即將結束於:</p>
                 <div class="countdown">
                   <div class="countdown-content">
                     <p class="display-number">360</p>
@@ -487,51 +592,48 @@
         <div class="showcase-container">
           <div class="showcase">
             <div class="showcase-banner">
-              <img src="~public/images/products/shampoo.jpg"
-              alt="shampoo, conditioner & facewash packs"
-              class="showcase-img">
+              <img
+                src="~public/images/products/shampoo.jpg"
+                alt="shampoo, conditioner & facewash packs"
+                class="showcase-img"
+              />
             </div>
             <div class="showcase-content">
               <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
-                <Icon icon="material-symbols:star-rounded"/>
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
+                <Icon icon="material-symbols:star-rounded" />
               </div>
               <a href="#" class="showcase-title">
-                <h3 class="showcase-title">shampoo, conditioner & facewash packs</h3>
+                <h3 class="showcase-title">
+                  shampoo, conditioner & facewash packs
+                </h3>
               </a>
-              
+
               <p class="showcase-desc">
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum 
-                dolor dolor sit amet consectetur Lorem ipsum dolor
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor
+                sit amet consectetur Lorem ipsum dolor
               </p>
-              
+
               <div class="price-box">
                 <p class="price">$150.00</p>
                 <del>$200.00</del>
               </div>
-              
+
               <button class="add-cart-btn">加到購物車</button>
-              
+
               <div class="showcase-status">
                 <div class="wrapper">
-                  <p>
-                    已經售出: <b>20</b>
-                  </p>
-                  <p>
-                    庫存剩下: <b>40</b>
-                  </p>
+                  <p>已經售出: <b>20</b></p>
+                  <p>庫存剩下: <b>40</b></p>
                 </div>
-                <div class="showcase-status-bar">
-                </div>
+                <div class="showcase-status-bar"></div>
               </div>
 
               <div class="countdown-box">
-                <p class="countdown-desc">
-                  即將結束於:
-                </p>
+                <p class="countdown-desc">即將結束於:</p>
                 <div class="countdown">
                   <div class="countdown-content">
                     <p class="display-number">360</p>
@@ -547,7 +649,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -559,10 +660,18 @@
       <div class="product-grid">
         <div class="showcase">
           <div class="showcase-banner">
-            <img src="~public/images/products/jacket-3.jpg" alt="男生冬天的外套"
-            class="product-img default" width="300">
-            <img src="~public/images/products/jacket-4.jpg" alt="男生冬天的外套"
-            class="product-img hover" width="300">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
             <div class="showcase-badge">15%</div>
             <div class="showcase-actions">
               <button class="btn-action">
@@ -583,11 +692,11 @@
             <a href="#" class="showcase-category">jacket</a>
             <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
             <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
             </div>
             <div class="price-box">
               <p class="price">$ 48.00</p>
@@ -597,10 +706,18 @@
         </div>
         <div class="showcase">
           <div class="showcase-banner">
-            <img src="~public/images/products/jacket-3.jpg" alt="男生冬天的外套"
-            class="product-img default" width="300">
-            <img src="~public/images/products/jacket-4.jpg" alt="男生冬天的外套"
-            class="product-img hover" width="300">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
             <div class="showcase-badge">15%</div>
             <div class="showcase-actions">
               <button class="btn-action">
@@ -621,11 +738,11 @@
             <a href="#" class="showcase-category">jacket</a>
             <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
             <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
             </div>
             <div class="price-box">
               <p class="price">$ 48.00</p>
@@ -635,10 +752,18 @@
         </div>
         <div class="showcase">
           <div class="showcase-banner">
-            <img src="~public/images/products/jacket-3.jpg" alt="男生冬天的外套"
-            class="product-img default" width="300">
-            <img src="~public/images/products/jacket-4.jpg" alt="男生冬天的外套"
-            class="product-img hover" width="300">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
             <div class="showcase-badge">15%</div>
             <div class="showcase-actions">
               <button class="btn-action">
@@ -659,11 +784,11 @@
             <a href="#" class="showcase-category">jacket</a>
             <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
             <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
-              <Icon icon="material-symbols:star-rounded"/>
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
             </div>
             <div class="price-box">
               <p class="price">$ 48.00</p>
@@ -676,12 +801,10 @@
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
-@use "~/assets/styles/variables" as *; 
+@use "~/assets/styles/variables" as *;
 
 .title {
   color: $eerie-black;
@@ -860,7 +983,7 @@
   }
   .showcase-status-bar::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 3px;
     left: 3px;
     height: 4px;
@@ -935,7 +1058,7 @@
     font-weight: $weight-500;
     color: $white;
     padding: 0 8px;
-    border-radius:$border-radius-sm;
+    border-radius: $border-radius-sm;
     z-index: 3;
   }
   .showcase-actions {
@@ -956,7 +1079,7 @@
     border-radius: 20%;
     transition: var(--transition-timing);
     &:hover {
-      background:$eerie-black;
+      background: $eerie-black;
       color: $white;
       border-color: $eerie-black;
     }
@@ -979,7 +1102,9 @@
     letter-spacing: 1px;
     margin-bottom: 10px;
     transition: $transition-timing;
-    &:hover { color: var(--eerie-black); }
+    &:hover {
+      color: var(--eerie-black);
+    }
   }
   .showcase-rating {
     display: flex;
@@ -1007,7 +1132,7 @@
   overflow: hidden;
   transition: $transition-timing;
   &:hover {
-    box-shadow: 0 0 10px hsla(0, 0%, 0%, .1);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
     transform: translateX(1px);
     .product-img.hover {
       opacity: 1;
@@ -1021,6 +1146,13 @@
     .showcase-actions {
       transform: translateX(0);
     }
+  }
+}
+
+@media (min-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 }
 </style>

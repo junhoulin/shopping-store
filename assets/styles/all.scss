@@ -1,17 +1,25 @@
 @use "~/assets/styles/variables" as *;
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Noto Sans TC, sans-serif;
-    font-style: normal;
-    // border: solid 1px black;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    Noto Sans TC,
+    sans-serif;
+  font-style: normal;
+  // border: solid 1px black;
 }
 
-a { text-decoration: none; }
-li { list-style: none; }
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
 button {
   background: none;
   font: inherit;
@@ -19,24 +27,35 @@ button {
   cursor: pointer;
 }
 
-img, Icon, button, a { display: block; }
+img,
+Icon,
+button,
+a {
+  display: block;
+}
 
-span { display: inline-block; }
+span {
+  display: inline-block;
+}
 
 input {
-    display: block;
-    width: 100%;
-    font: inherit;
+  display: block;
+  width: 100%;
+  font: inherit;
 }
-  
-input::placeholder { font: inherit; }
+
+input::placeholder {
+  font: inherit;
+}
 
 .container {
   padding: 0px 15px;
 }
 
 // 滾輪設定
-.has-scrollbar { padding-bottom: 5px; }
+.has-scrollbar {
+  padding-bottom: 5px;
+}
 
 .has-scrollbar::-webkit-scrollbar {
   width: 12px;
@@ -49,8 +68,12 @@ input::placeholder { font: inherit; }
   border-radius: 20px;
 }
 
-.has-scrollbar:hover::-webkit-scrollbar-thumb { background: hsl(0, 0%, 90%); }
+.has-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 90%);
+}
 
-.has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 80%); }
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 80%);
+}
 
 $qwer: 20px;

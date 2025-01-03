@@ -1,31 +1,44 @@
 <template>
   <div>
-      <div class="overlay"></div>
+    <div class="overlay"></div>
   </div>
   <!-- modal -->
   <div class="modal" v-if="isActiveModal">
-      <div class="modal-close-overlay" @click="toggleClass"></div>
-      <div class="modal-content">
-          <div class="modal-close-btn" @click="toggleClass">
-              <Icon icon="typcn:delete" class="iconDelete" />
-          </div>
-          <div class="newsletter-img">
-              <img src="~public/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
-          </div>
-          <div class="newsletter">
-              <form action="#">
-                  <div class="newsletter-header">
-                      <div class="newsletter-title">
-                          <h3 class="newsletter-title">接收最新消息</h3>
-                          <p class="newsletter-desc">訂閱我們品牌 - <b>Yushin
-                          </b><br>我們有最新的優惠或活動時，第一時間將消息發送您的電子郵件！</p>
-                      </div>
-                      <input type="email" name="email" class="email-field" placeholder="電子郵件地址" required>
-                      <button type="submit" class="btn-newsletter">訂閱消息</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-close-overlay" @click="toggleClass"></div>
+    <div class="modal-content">
+      <div class="modal-close-btn" @click="toggleClass">
+        <Icon icon="typcn:delete" class="iconDelete" />
       </div>
+      <div class="newsletter-img">
+        <img
+          src="~public/images/newsletter.png"
+          alt="subscribe newsletter"
+          width="400"
+          height="400"
+        />
+      </div>
+      <div class="newsletter">
+        <form action="#">
+          <div class="newsletter-header">
+            <div class="newsletter-title">
+              <h3 class="newsletter-title">接收最新消息</h3>
+              <p class="newsletter-desc">
+                訂閱我們品牌 - <b>Yushin </b
+                ><br />我們有最新的優惠或活動時，第一時間將消息發送您的電子郵件！
+              </p>
+            </div>
+            <input
+              type="email"
+              name="email"
+              class="email-field"
+              placeholder="電子郵件地址"
+              required
+            />
+            <button type="submit" class="btn-newsletter">訂閱消息</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,11 +48,10 @@ const isActiveModal = ref(true);
 const toggleClass = () => {
   isActiveModal.value = !isActiveModal.value;
 };
-
 </script>
 
 <style lang="scss" scoped>
-@use "~/assets/styles/variables" as *; 
+@use "~/assets/styles/variables" as *;
 
 .overlay {
   position: fixed;
@@ -47,11 +59,11 @@ const toggleClass = () => {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   z-index: 15;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .overlay.active {
@@ -59,13 +71,13 @@ const toggleClass = () => {
   pointer-events: all;
 }
 
-.modal{
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,17 +93,17 @@ const toggleClass = () => {
   color: hsl(353, 100%, 78%);
 }
 
-@keyframes popup{
+@keyframes popup {
   0% {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   100% {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
   }
 }
 
@@ -104,7 +116,7 @@ const toggleClass = () => {
   z-index: 1;
 }
 
-.newsletter-img{
+.newsletter-img {
   display: none;
 }
 
@@ -116,12 +128,16 @@ const toggleClass = () => {
   border-radius: $border-radius-md;
   overflow: hidden;
   z-index: 2;
-  animation: scaleUp .5s ease-in-out 5s forwards;
+  animation: scaleUp 0.5s ease-in-out 5s forwards;
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(0.9); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .modal-close-btn {
@@ -129,7 +145,7 @@ const toggleClass = () => {
   top: 15px;
   right: 15px;
   &:hover {
-      opacity: 0.8;
+    opacity: 0.8;
   }
 }
 
@@ -172,7 +188,7 @@ const toggleClass = () => {
   border-radius: $border-radius-sm;
   transition: $transition-timing;
   &:hover {
-      background: $bittersweet;
+    background: $bittersweet;
   }
 }
 </style>

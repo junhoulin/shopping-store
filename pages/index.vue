@@ -1,20 +1,16 @@
 <template>
-    <!-- <Modal /> -->
-    <GlobalHeader />
-    <banner />
-    <category />
-    <product />
-    <card />
-    <CardCard01 />
-    <CardService />
-    <CardBlog />
-    <GlobalFooter />
+  <!-- <Modal /> -->
+  <GlobalHeader />
+  <banner />
+  <category />
+  <product />
+  <card />
+  <CardCard01 />
+  <CardService />
+  <CardBlog />
+  <GlobalFooter />
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
