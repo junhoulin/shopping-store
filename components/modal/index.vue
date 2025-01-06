@@ -191,4 +191,19 @@ const toggleClass = () => {
     background: $bittersweet;
   }
 }
+
+@media (min-width: 768px) {
+  .modal-content {
+    display: flex;
+    align-items: center;
+    max-width: 750px;
+    width: fit-content;
+  }
+  .newsletter-img {
+    display: block;
+  }
+  .newsletter {
+    text-align: left;
+  }
+}
 </style>

@@ -105,4 +105,10 @@
     font-size: $fs-5;
   }
 }
+
+@media (min-width: 480px) {
+  .cta-container {
+    aspect-ratio: 6/5;
+  }
+}
 </style>

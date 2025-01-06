@@ -88,4 +88,17 @@
   color: $sonic-silver;
   font-size: $fs-7;
 }
+
+@media (min-width: 1024px) {
+  .testimonials-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .testimonial-card {
+    margin-bottom: 0;
+  }
+}
 </style>

@@ -76,4 +76,43 @@ input::placeholder {
   background: hsl(0, 0%, 80%);
 }
 
-$qwer: 20px;
+// RWD設定
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  .container {
+    max-width: 750px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  $fs-1: 2.625em;
+  $fs-2: 1.125rem;
+
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 1350px;
+  }
+}

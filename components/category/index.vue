@@ -205,4 +205,25 @@
   font-weight: $weight-500;
   text-transform: capitalize;
 }
+
+@media (min-width: 768px) {
+  .category-item-container {
+    gap: 30px;
+  }
+  .category-item {
+    min-width: calc(50% - 15px);
+  }
+  .category-img-box {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-item {
+    min-width: calc(33.33% - 20px);
+  }
+  .category-img-box {
+    padding: 10px;
+  }
+}
 </style>

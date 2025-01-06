@@ -1,528 +1,617 @@
 <template>
-  <div class="sidebar has-scrollbar" :class="{ active: props.isActiveList4 }">
-    <div class="sidebar-category">
-      <div class="sidebar-top">
-        <h2 class="sidebar-title">Category</h2>
-        <button class="sidebar-close-btn" @click="updateList4">
-          <Icon icon="material-symbols:close" />
-        </button>
-      </div>
-      <ul class="sidebar-menu-category-list">
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list1')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/dress.svg"
-                alt="clothes"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Clothes</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list1"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list1 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="" class="sidebar-submenu-title">
-                <p class="product-name">Shirt</p>
-                <data value="300" class="stock" title="Available Stock"
-                  >300</data
-                >
-              </a>
-            </li>
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Shorts & Jeans</p>
-                <data value="60" class="stock" title="Available Stock">60</data>
-              </a>
-            </li>
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Jacket</p>
-                <data value="50" class="stock" title="Available Stock">50</data>
-              </a>
-            </li>
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Dress & Frock</p>
-                <data value="87" class="stock" title="Available Stock">87</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list2')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/shoes.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Footwear</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list2"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list2 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list3')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/jewelry.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">jewelry</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list3"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list3 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list4')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/Perfume.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Perfume</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list4"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list4 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list5')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/Cosmetics.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Cosmetics</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list5"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list5 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list6')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/Glasses.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Glasses</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list6"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list6 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu-category">
-          <button
-            class="sidebar-accordion-menu"
-            @click="toggleNavMenu('list7')"
-          >
-            <div class="menu-title-flex">
-              <img
-                src="~public/images/icons/Bag.svg"
-                alt="footwear"
-                class="menu-title-img"
-                width="20"
-                height="20"
-              />
-              <p class="menu-title">Bags</p>
-            </div>
-            <div>
-              <Icon
-                icon="material-symbols:add"
-                class="add-icon"
-                v-if="!activeMenu.list7"
-              />
-              <Icon icon="material-symbols:remove" class="remove-icon" v-else />
-            </div>
-          </button>
-
-          <ul
-            class="sidebar-submenu-category-list"
-            :class="{ active: activeMenu.list7 }"
-          >
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Sports</p>
-                <data value="45" class="stock" title="Available Stock">45</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Formal</p>
-                <data value="75" class="stock" title="Available Stock">75</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Casual</p>
-                <data value="35" class="stock" title="Available Stock">35</data>
-              </a>
-            </li>
-
-            <li class="sidebar-submenu-category">
-              <a href="#" class="sidebar-submenu-title">
-                <p class="product-name">Safety Shoes</p>
-                <data value="26" class="stock" title="Available Stock">26</data>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="product-showcase">
-      <h3 class="showcase-heading">best sellers</h3>
-      <div class="showcase-wrapper">
-        <div class="showcase-container">
-          <div class="showcase">
-            <a href="#" class="showcase-img-box">
-              <img
-                src="~public/images/products/1.jpg"
-                alt="baby fabric shoes"
-                class="showcase-img"
-                width="75"
-                height="75"
-              />
-            </a>
-            <div class="showcase-content">
-              <a href="#">
-                <h4 class="showcase-title">baby fabric shoes</h4>
-              </a>
-              <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-              </div>
-              <div class="price-box">
-                <del>$5.00</del>
-                <p class="price">4.00</p>
-              </div>
-            </div>
+  <div class="product-container">
+    <div class="container">
+      <div
+        class="sidebar has-scrollbar"
+        :class="{ active: props.isActiveList4 }"
+      >
+        <div class="sidebar-category">
+          <div class="sidebar-top">
+            <h2 class="sidebar-title">Category</h2>
+            <button class="sidebar-close-btn" @click="updateList4">
+              <Icon icon="material-symbols:close" />
+            </button>
           </div>
-          <div class="showcase">
-            <a href="#" class="showcase-img-box">
-              <img
-                src="~public/images/products/2.jpg"
-                alt="baby fabric shoes"
-                class="showcase-img"
-                width="75"
-                height="75"
-              />
-            </a>
-            <div class="showcase-content">
-              <a href="#">
-                <h4 class="showcase-title">Men's hoodies t-shirt</h4>
-              </a>
-              <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
+          <ul class="sidebar-menu-category-list">
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list1')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/dress.svg"
+                    alt="clothes"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Clothes</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list1"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list1 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="" class="sidebar-submenu-title">
+                    <p class="product-name">Shirt</p>
+                    <data value="300" class="stock" title="Available Stock"
+                      >300</data
+                    >
+                  </a>
+                </li>
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Shorts & Jeans</p>
+                    <data value="60" class="stock" title="Available Stock"
+                      >60</data
+                    >
+                  </a>
+                </li>
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Jacket</p>
+                    <data value="50" class="stock" title="Available Stock"
+                      >50</data
+                    >
+                  </a>
+                </li>
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Dress & Frock</p>
+                    <data value="87" class="stock" title="Available Stock"
+                      >87</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list2')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/shoes.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Footwear</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list2"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list2 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list3')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/jewelry.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">jewelry</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list3"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list3 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list4')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/Perfume.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Perfume</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list4"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list4 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list5')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/Cosmetics.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Cosmetics</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list5"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list5 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list6')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/Glasses.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Glasses</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list6"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list6 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-menu-category">
+              <button
+                class="sidebar-accordion-menu"
+                @click="toggleNavMenu('list7')"
+              >
+                <div class="menu-title-flex">
+                  <img
+                    src="~public/images/icons/Bag.svg"
+                    alt="footwear"
+                    class="menu-title-img"
+                    width="20"
+                    height="20"
+                  />
+                  <p class="menu-title">Bags</p>
+                </div>
+                <div>
+                  <Icon
+                    icon="material-symbols:add"
+                    class="add-icon"
+                    v-if="!activeMenu.list7"
+                  />
+                  <Icon
+                    icon="material-symbols:remove"
+                    class="remove-icon"
+                    v-else
+                  />
+                </div>
+              </button>
+
+              <ul
+                class="sidebar-submenu-category-list"
+                :class="{ active: activeMenu.list7 }"
+              >
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Sports</p>
+                    <data value="45" class="stock" title="Available Stock"
+                      >45</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Formal</p>
+                    <data value="75" class="stock" title="Available Stock"
+                      >75</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Casual</p>
+                    <data value="35" class="stock" title="Available Stock"
+                      >35</data
+                    >
+                  </a>
+                </li>
+
+                <li class="sidebar-submenu-category">
+                  <a href="#" class="sidebar-submenu-title">
+                    <p class="product-name">Safety Shoes</p>
+                    <data value="26" class="stock" title="Available Stock"
+                      >26</data
+                    >
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="product-showcase">
+          <h3 class="showcase-heading">best sellers</h3>
+          <div class="showcase-wrapper">
+            <div class="showcase-container">
+              <div class="showcase">
+                <a href="#" class="showcase-img-box">
+                  <img
+                    src="~public/images/products/1.jpg"
+                    alt="baby fabric shoes"
+                    class="showcase-img"
+                    width="75"
+                    height="75"
+                  />
+                </a>
+                <div class="showcase-content">
+                  <a href="#">
+                    <h4 class="showcase-title">baby fabric shoes</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                  </div>
+                  <div class="price-box">
+                    <del>$5.00</del>
+                    <p class="price">4.00</p>
+                  </div>
+                </div>
               </div>
-              <div class="price-box">
-                <del>$5.00</del>
-                <p class="price">4.00</p>
+              <div class="showcase">
+                <a href="#" class="showcase-img-box">
+                  <img
+                    src="~public/images/products/2.jpg"
+                    alt="baby fabric shoes"
+                    class="showcase-img"
+                    width="75"
+                    height="75"
+                  />
+                </a>
+                <div class="showcase-content">
+                  <a href="#">
+                    <h4 class="showcase-title">Men's hoodies t-shirt</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                  </div>
+                  <div class="price-box">
+                    <del>$5.00</del>
+                    <p class="price">4.00</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="showcase">
-            <a href="#" class="showcase-img-box">
-              <img
-                src="~public/images/products/3.jpg"
-                alt="baby fabric shoes"
-                class="showcase-img"
-                width="75"
-                height="75"
-              />
-            </a>
-            <div class="showcase-content">
-              <a href="#">
-                <h4 class="showcase-title">Girls t-shirt</h4>
-              </a>
-              <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
+              <div class="showcase">
+                <a href="#" class="showcase-img-box">
+                  <img
+                    src="~public/images/products/3.jpg"
+                    alt="baby fabric shoes"
+                    class="showcase-img"
+                    width="75"
+                    height="75"
+                  />
+                </a>
+                <div class="showcase-content">
+                  <a href="#">
+                    <h4 class="showcase-title">Girls t-shirt</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                  </div>
+                  <div class="price-box">
+                    <del>$5.00</del>
+                    <p class="price">4.00</p>
+                  </div>
+                </div>
               </div>
-              <div class="price-box">
-                <del>$5.00</del>
-                <p class="price">4.00</p>
-              </div>
-            </div>
-          </div>
-          <div class="showcase">
-            <a href="#" class="showcase-img-box">
-              <img
-                src="~public/images/products/4.jpg"
-                alt="baby fabric shoes"
-                class="showcase-img"
-                width="75"
-                height="75"
-              />
-            </a>
-            <div class="showcase-content">
-              <a href="#">
-                <h4 class="showcase-title">Woolen hat for men</h4>
-              </a>
-              <div class="showcase-rating">
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-                <Icon icon="material-symbols:star-rounded" />
-              </div>
-              <div class="price-box">
-                <del>$5.00</del>
-                <p class="price">4.00</p>
+              <div class="showcase">
+                <a href="#" class="showcase-img-box">
+                  <img
+                    src="~public/images/products/4.jpg"
+                    alt="baby fabric shoes"
+                    class="showcase-img"
+                    width="75"
+                    height="75"
+                  />
+                </a>
+                <div class="showcase-content">
+                  <a href="#">
+                    <h4 class="showcase-title">Woolen hat for men</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                    <Icon icon="material-symbols:star-rounded" />
+                  </div>
+                  <div class="price-box">
+                    <del>$5.00</del>
+                    <p class="price">4.00</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

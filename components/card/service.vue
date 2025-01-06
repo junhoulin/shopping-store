@@ -58,6 +58,39 @@
               <p class="service-desc">For Order Over $100</p>
             </div>
           </a>
+
+          <a href="#" class="service-item">
+            <div class="service-icon">
+              <Icon icon="tabler:ticket" />
+            </div>
+
+            <div class="service-content">
+              <h3 class="service-title">30% Money Back</h3>
+              <p class="service-desc">For Order Over $100</p>
+            </div>
+          </a>
+
+          <a href="#" class="service-item">
+            <div class="service-icon">
+              <Icon icon="tabler:ticket" />
+            </div>
+
+            <div class="service-content">
+              <h3 class="service-title">30% Money Back</h3>
+              <p class="service-desc">For Order Over $100</p>
+            </div>
+          </a>
+
+          <a href="#" class="service-item">
+            <div class="service-icon">
+              <Icon icon="tabler:ticket" />
+            </div>
+
+            <div class="service-content">
+              <h3 class="service-title">30% Money Back</h3>
+              <p class="service-desc">For Order Over $100</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -122,5 +155,8 @@
 .service-desc {
   color: $sonic-silver;
   font-size: $fs-9;
+}
+
+@media (min-width: 1024px) {
 }
 </style>

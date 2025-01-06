@@ -173,6 +173,90 @@
               </div>
             </div>
           </div>
+          <div class="showcase-container">
+            <div class="showcase">
+              <a href="#" class="showcase-img-box">
+                <img
+                  src="~public/images/products/clothes-1.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
+              </a>
+              <div class="showcase-content">
+                <a href="#">
+                  <h4 class="showcase-title">
+                    Relaxed Short full Sleeve T-Shirt
+                  </h4>
+                </a>
+                <a href="#" class="showcase-category">Clothes</a>
+                <div class="price-box">
+                  <p class="price">$45.00</p>
+                  <del>$12.00</del>
+                </div>
+              </div>
+            </div>
+            <div class="showcase">
+              <a href="#" class="showcase-img-box">
+                <img
+                  src="~public/images/products/clothes-2.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
+              </a>
+              <div class="showcase-content">
+                <a href="#">
+                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
+                </a>
+                <a href="#" class="showcase-category">Clothes</a>
+                <div class="price-box">
+                  <p class="price">$215.00</p>
+                  <del>$233.00</del>
+                </div>
+              </div>
+            </div>
+            <div class="showcase">
+              <a href="#" class="showcase-img-box">
+                <img
+                  src="~public/images/products/clothes-3.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
+              </a>
+              <div class="showcase-content">
+                <a href="#">
+                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
+                </a>
+                <a href="#" class="showcase-category">Clothes</a>
+                <div class="price-box">
+                  <p class="price">$76.00</p>
+                  <del>76.00</del>
+                </div>
+              </div>
+            </div>
+            <div class="showcase">
+              <a href="#" class="showcase-img-box">
+                <img
+                  src="~public/images/products/clothes-4.jpg"
+                  alt="睡衣"
+                  class="showcase-img"
+                  width="70"
+                />
+              </a>
+              <div class="showcase-content">
+                <a href="#">
+                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
+                </a>
+                <a href="#" class="showcase-category">Mens Fashion</a>
+                <div class="price-box">
+                  <p class="price">$68.00</p>
+                  <del>$33.00</del>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="product-showcase">
@@ -796,6 +880,144 @@
             </div>
           </div>
         </div>
+        <div class="showcase">
+          <div class="showcase-banner">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
+            <div class="showcase-badge">15%</div>
+            <div class="showcase-actions">
+              <button class="btn-action">
+                <Icon icon="mdi:heart-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="mdi:eye-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="material-symbols:repeat-rounded" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="solar:bag-line-duotone" />
+              </button>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <a href="#" class="showcase-category">jacket</a>
+            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
+            <div class="showcase-rating">
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+            </div>
+            <div class="price-box">
+              <p class="price">$ 48.00</p>
+              <del>$75.00</del>
+            </div>
+          </div>
+        </div>
+        <div class="showcase">
+          <div class="showcase-banner">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
+            <div class="showcase-badge">15%</div>
+            <div class="showcase-actions">
+              <button class="btn-action">
+                <Icon icon="mdi:heart-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="mdi:eye-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="material-symbols:repeat-rounded" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="solar:bag-line-duotone" />
+              </button>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <a href="#" class="showcase-category">jacket</a>
+            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
+            <div class="showcase-rating">
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+            </div>
+            <div class="price-box">
+              <p class="price">$ 48.00</p>
+              <del>$75.00</del>
+            </div>
+          </div>
+        </div>
+        <div class="showcase">
+          <div class="showcase-banner">
+            <img
+              src="~public/images/products/jacket-3.jpg"
+              alt="男生冬天的外套"
+              class="product-img default"
+              width="300"
+            />
+            <img
+              src="~public/images/products/jacket-4.jpg"
+              alt="男生冬天的外套"
+              class="product-img hover"
+              width="300"
+            />
+            <div class="showcase-badge">15%</div>
+            <div class="showcase-actions">
+              <button class="btn-action">
+                <Icon icon="mdi:heart-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="mdi:eye-outline" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="material-symbols:repeat-rounded" />
+              </button>
+              <button class="btn-action">
+                <Icon icon="solar:bag-line-duotone" />
+              </button>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <a href="#" class="showcase-category">jacket</a>
+            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
+            <div class="showcase-rating">
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+              <Icon icon="material-symbols:star-rounded" />
+            </div>
+            <div class="price-box">
+              <p class="price">$ 48.00</p>
+              <del>$75.00</del>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1153,6 +1375,95 @@
   .product-grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+}
+
+@media (min-width: 570px) {
+  .product-minimal {
+    .showcase-container {
+      min-width: 50%;
+    }
+  }
+
+  .product-featured {
+    .showcase-img {
+      max-width: 450px;
+      margin: auto;
+    }
+    .countdown {
+      gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .product-minimal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    .product-showcase {
+      min-width: calc(50% - 10px);
+      width: calc(50% - 10px);
+    }
+    .showcase-container {
+      min-width: 100%;
+    }
+  }
+
+  .product-featured {
+    .showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-minimal {
+    margin-bottom: 20px;
+    .product-showcase {
+      min-width: calc(33.33% - 14px);
+      width: calc(33.33% - 14px);
+      flex-grow: 1;
+    }
+    .showcase-wrapper {
+      gap: 10px;
+    }
+    .showcase-container {
+      padding: 2px;
+    }
+  }
+
+  .product-featured {
+    .countdown-content {
+      padding: 5px 10px;
+    }
+  }
+
+  .product-main {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-featured {
+    .showcase > div {
+      min-width: calc(50% - 10px);
+    }
+    .display-number {
+      font-size: $fs-3;
+    }
+  }
+  .product-main {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
 </style>

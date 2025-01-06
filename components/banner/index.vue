@@ -148,4 +148,39 @@
     }
   }
 }
+
+@media (min-width: 520px) {
+  .slider-item {
+    aspect-ratio: 4/2;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider-item {
+    height: 350px;
+    aspect-ratio: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    margin-top: 0;
+  }
+  .slider-item {
+    height: 360px;
+    .banner-content {
+      left: 75px;
+      max-width: 400px;
+    }
+    .banner-subtitle {
+      font-size: 1.625rem;
+    }
+    .banner-text {
+      font-size: 1.625rem;
+    }
+    .banner-btn {
+      font-size: 0.875rem;
+    }
+  }
+}
 </style>

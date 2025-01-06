@@ -118,6 +118,11 @@
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+  cursor: grab; /* 鼠標變成抓取圖示 */
+  user-select: none; /* 防止拖動時選中文字 */
+  &.grabbing {
+    cursor: grabbing; /* 拖動時的狀態 */
+  }
 }
 
 .blog-card {
@@ -155,6 +160,35 @@
   cite {
     font-style: normal;
     color: $davys-gray;
+  }
+}
+
+@media (min-width: 570px) {
+  .blog-container {
+    gap: 30px;
+  }
+  .blog-card {
+    min-width: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-container {
+    padding-top: 20px;
+  }
+
+  .blog-card {
+    min-width: calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog {
+    margin-bottom: 50px;
+  }
+
+  .blog-card {
+    min-width: calc(25% - 22.5px);
   }
 }
 </style>
