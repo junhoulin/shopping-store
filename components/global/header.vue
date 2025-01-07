@@ -799,7 +799,7 @@ const toggleNavMenu = (menu) => {
     }
     .social-link {
       padding: 5px 8px;
-      background: hsl(0, 0, 95%);
+      background: hsl(0, 0%, 95%);
       border-radius: $border-radius-sm;
       color: $sonic-silver;
       transition: $transition-timing;

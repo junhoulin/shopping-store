@@ -1176,7 +1176,7 @@
     font-weight: $fs-9;
     font-weight: $weight-500;
     text-transform: uppercase;
-    border-radius: $border-radius-md;
+    border-radius: $border-radius-sm;
     margin-bottom: 15px;
     transition: $transition-timing;
     &:hover {
@@ -1325,7 +1325,7 @@
     margin-bottom: 10px;
     transition: $transition-timing;
     &:hover {
-      color: var(--eerie-black);
+      color: $eerie-black;
     }
   }
   .showcase-rating {
