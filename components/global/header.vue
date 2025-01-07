@@ -48,7 +48,7 @@
     <!-- header-main -->
     <div class="header-main">
       <div class="container">
-        <a href="#" class="header-logo">
+        <a href="/" class="header-logo">
           <img
             src="~public/images/logo/logo.svg"
             alt="Yushin's logo"
@@ -63,9 +63,11 @@
             class="search-field"
             placeholder="輸入您想搜尋的產品....."
           />
-          <button class="search-btn">
-            <Icon icon="tabler:search" />
-          </button>
+          <NuxtLink to="/search/a">
+            <button class="search-btn">
+              <Icon icon="tabler:search" />
+            </button>
+          </NuxtLink>
         </div>
         <div class="header-user-actions">
           <div class="action-btn">

@@ -41,7 +41,7 @@
       </div>
       <div class="product-content">
         <h3 class="product-content-category">Home / T-shirt</h3>
-        <div class="hashtag">
+        <div class="product-hashtag">
           <a href="#">冬季新品</a>
           <a href="#">限定優惠</a>
           <a href="#">補貨中</a>
@@ -80,7 +80,12 @@
             <option value="size">S</option>
           </select>
         </div>
-        <button class="add-cart-btn">加到購物車</button>
+        <div class="add-group">
+          <button class="add-cart-btn">加到購物車</button>
+          <button class="add-like-btn">
+            <Icon icon="mdi:heart-outline" width="24" />
+          </button>
+        </div>
         <div class="product-content-detail">產品介紹</div>
         <p class="product-content-detail-info">
           這款 Men Fashion T-Shirt 採用高品質純棉材質製成，
@@ -118,7 +123,7 @@ const updateMainImage = (newImage) => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-bottom: 60px;
 }
 .product-img {
@@ -155,7 +160,7 @@ const updateMainImage = (newImage) => {
   width: 90%;
   padding: 1% 3%;
   margin-top: 30px;
-  .hashtag {
+  .product-hashtag {
     font-size: $fs-10;
     display: flex;
     align-items: center;
@@ -216,6 +221,23 @@ const updateMainImage = (newImage) => {
       }
     }
   }
+  .add-group {
+    display: flex;
+    gap: 10px;
+  }
+  .add-like-btn {
+    border: 1px solid $cultured;
+    border-radius: 20%;
+    height: 50%;
+    display: flex;
+    padding: 7px 10px;
+    background: $eerie-black;
+    color: $cultured;
+    transition: $transition-timing;
+    &:hover {
+      background: $salmon-pink;
+    }
+  }
   .add-cart-btn {
     background: $salmon-pink;
     padding: 8px 15px;
@@ -225,6 +247,7 @@ const updateMainImage = (newImage) => {
     text-transform: uppercase;
     border-radius: $border-radius-sm;
     margin-bottom: 30px;
+    transition: $transition-timing;
     &:hover {
       background: $eerie-black;
     }
@@ -237,9 +260,13 @@ const updateMainImage = (newImage) => {
 }
 
 @media (min-width: 1024px) {
+  .product-flex {
+    margin-top: 30px;
+  }
   .product-content {
     width: 50%;
     padding: 6%;
+    margin-top: 0px;
   }
 
   .product-flex {
