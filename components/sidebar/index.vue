@@ -226,7 +226,7 @@
               >
                 <div class="menu-title-flex">
                   <img
-                    src="~public/images/icons/Perfume.svg"
+                    src="~public/images/icons/perfume.svg"
                     alt="footwear"
                     class="menu-title-img"
                     width="20"
@@ -296,7 +296,7 @@
               >
                 <div class="menu-title-flex">
                   <img
-                    src="~public/images/icons/Cosmetics.svg"
+                    src="~public/images/icons/cosmetics.svg"
                     alt="footwear"
                     class="menu-title-img"
                     width="20"
@@ -366,7 +366,7 @@
               >
                 <div class="menu-title-flex">
                   <img
-                    src="~public/images/icons/Glasses.svg"
+                    src="~public/images/icons/glasses.svg"
                     alt="footwear"
                     class="menu-title-img"
                     width="20"
@@ -436,7 +436,7 @@
               >
                 <div class="menu-title-flex">
                   <img
-                    src="~public/images/icons/Bag.svg"
+                    src="~public/images/icons/bag.svg"
                     alt="footwear"
                     class="menu-title-img"
                     width="20"
