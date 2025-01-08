@@ -3,7 +3,7 @@
   <div class="container">
     <div class="user-form animate__animated animate__fadeIn">
       <div class="login-form" v-if="loginStatue">
-        <h1>登入會員</h1>
+        <h2>登入會員</h2>
         <div class="input-box">
           <input
             type="text"
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="register-form" v-else>
-        <h1>加入會員</h1>
+        <h2>加入會員</h2>
         <div class="input-box">
           <input
             type="text"
@@ -137,7 +137,7 @@ const toggleStatue = () => {
   height: 600px;
 }
 
-h1 {
+h2 {
   font-size: $fs-3;
   color: $eerie-black;
   font-weight: $weight-500;

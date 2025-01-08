@@ -79,10 +79,12 @@
             <Icon icon="mingcute:love-fill" />
             <span class="count">0</span>
           </div>
-          <div class="action-btn">
-            <Icon icon="material-symbols-light:shopping-bag" />
-            <span class="count">0</span>
-          </div>
+          <NuxtLink to="/cart/">
+            <div class="action-btn">
+              <Icon icon="material-symbols-light:shopping-bag" />
+              <span class="count">0</span>
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -218,14 +220,18 @@
       <button class="action-btn" @click="toggleMobileNav('list1')">
         <Icon icon="gg:menu-round" />
       </button>
-      <button class="action-btn">
-        <Icon icon="material-symbols-light:shopping-bag" />
-        <span class="count">0</span>
-      </button>
-      <button class="action-btn">
-        <Icon icon="mingcute:love-fill" />
-        <span class="count">0</span>
-      </button>
+      <nuxt-link to="/cart">
+        <button class="action-btn">
+          <Icon icon="material-symbols-light:shopping-bag" />
+          <span class="count">0</span>
+        </button>
+      </nuxt-link>
+      <nuxt-link to="/cart/like">
+        <button class="action-btn">
+          <Icon icon="mingcute:love-fill" />
+          <span class="count">0</span>
+        </button>
+      </nuxt-link>
       <button class="action-btn" @click="toggleMobileNav('list4')">
         <Icon icon="mynaui:grid" />
       </button>
@@ -245,11 +251,18 @@
       <!-- mobile-navigation-menu-list -->
       <ul class="mobile-menu-category-list">
         <li class="menu-category">
-          <a href="#" class="menu-title">Home</a>
+          <nuxt-link to="/">
+            <a href="#" class="menu-title">官網主頁</a>
+          </nuxt-link>
+        </li>
+        <li class="menu-category">
+          <nuxt-link to="/user/">
+            <a href="#" class="menu-title">個人資料</a>
+          </nuxt-link>
         </li>
         <li class="menu-category">
           <button class="accordion-menu" @click="toggleNavMenu('list1')">
-            <p class="menu-title">Men's</p>
+            <p class="menu-title">sadasd</p>
             <div>
               <Icon
                 icon="material-symbols:add"
