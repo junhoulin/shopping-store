@@ -23,6 +23,7 @@
 
 <style lang="scss" scoped>
 @use "~/assets/styles/variables" as *;
+
 @media (min-width: 1024px) {
   .card {
     display: flex;

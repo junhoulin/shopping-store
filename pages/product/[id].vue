@@ -1,7 +1,7 @@
 <template>
   <GlobalHeader />
   <div class="container">
-    <div class="product-flex">
+    <div class="product-flex animate__animated animate__fadeIn">
       <div class="product-img">
         <div :class="imageClass">
           <img :src="currentImage" alt="" />

@@ -70,9 +70,11 @@
           </NuxtLink>
         </div>
         <div class="header-user-actions">
-          <div class="action-btn">
-            <Icon icon="solar:user-bold" />
-          </div>
+          <NuxtLink to="/user">
+            <div class="action-btn">
+              <Icon icon="solar:user-bold" />
+            </div>
+          </NuxtLink>
           <div class="action-btn">
             <Icon icon="mingcute:love-fill" />
             <span class="count">0</span>

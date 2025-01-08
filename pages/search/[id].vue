@@ -1,7 +1,7 @@
 <template>
   <GlobalHeader />
   <div class="container">
-    <div class="search-flex">
+    <div class="search-flex animate__animated animate__fadeIn">
       <div class="search-top">
         <p>搜尋 Iouiou 的結果,共搜尋到29筆資料</p>
         <div class="seach-category">
@@ -19,6 +19,7 @@
       </div>
     </div>
   </div>
+  <GlobalFooter />
 </template>
 
 <script setup></script>
