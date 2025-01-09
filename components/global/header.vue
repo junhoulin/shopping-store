@@ -75,10 +75,12 @@
               <Icon icon="solar:user-bold" />
             </div>
           </NuxtLink>
-          <div class="action-btn">
-            <Icon icon="mingcute:love-fill" />
-            <span class="count">0</span>
-          </div>
+          <NuxtLink to="/cart/like">
+            <div class="action-btn">
+              <Icon icon="mingcute:love-fill" />
+              <span class="count">0</span>
+            </div>
+          </NuxtLink>
           <NuxtLink to="/cart/">
             <div class="action-btn">
               <Icon icon="material-symbols-light:shopping-bag" />
@@ -93,14 +95,14 @@
       <div class="container">
         <ul class="desktop-menu-category-list">
           <li class="menu-category">
-            <a href="" class="menu-title">主頁</a>
+            <nuxt-link to="/" class="menu-title">主頁</nuxt-link>
           </li>
           <li class="menu-category">
             <a href="" class="menu-title">檢視類別</a>
 
             <div class="dropdown-panel">
               <ul class="dropdown-panel-list">
-                <li class="menu-title"><a href="#">檢視類別</a></li>
+                <li class="menu-title"><a>檢視類別</a></li>
                 <div class="panel-list-item"><a href="#">主頁</a></div>
                 <div class="panel-list-item"><a href="#">筆記型電腦</a></div>
                 <div class="panel-list-item"><a href="#">數位相機</a></div>
@@ -118,12 +120,12 @@
                 </div>
               </ul>
               <ul class="dropdown-panel-list">
-                <li class="menu-title"><a href="#">Men's</a></li>
-                <li class="panel-list-item"><a href="#">Formal</a></li>
-                <li class="panel-list-item"><a href="#">Casual</a></li>
-                <li class="panel-list-item"><a href="#">Sports</a></li>
-                <li class="panel-list-item"><a href="#">Jacket</a></li>
-                <li class="panel-list-item"><a href="#">Sunglasses</a></li>
+                <li class="menu-title"><a href="#">男性服飾</a></li>
+                <li class="panel-list-item"><a href="#">短袖上衣</a></li>
+                <li class="panel-list-item"><a href="#">長袖上衣</a></li>
+                <li class="panel-list-item"><a href="#">長褲</a></li>
+                <li class="panel-list-item"><a href="#">短褲</a></li>
+                <li class="panel-list-item"><a href="#">外套</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/mens-banner.jpg"
@@ -134,12 +136,12 @@
                 </li>
               </ul>
               <ul class="dropdown-panel-list">
-                <li class="menu-title"><a href="#">Women's</a></li>
-                <li class="panel-list-item"><a href="#">Formal</a></li>
-                <li class="panel-list-item"><a href="#">Casual</a></li>
-                <li class="panel-list-item"><a href="#">Perfume</a></li>
-                <li class="panel-list-item"><a href="#">Cosmetics</a></li>
-                <li class="panel-list-item"><a href="#">Bags</a></li>
+                <li class="menu-title"><a href="#">女性服飾</a></li>
+                <li class="panel-list-item"><a href="#">短袖上衣</a></li>
+                <li class="panel-list-item"><a href="#">長袖上衣</a></li>
+                <li class="panel-list-item"><a href="#">長褲</a></li>
+                <li class="panel-list-item"><a href="#">短褲</a></li>
+                <li class="panel-list-item"><a href="#">外套</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/womens-banner.jpg"
@@ -150,12 +152,12 @@
                 </li>
               </ul>
               <ul class="dropdown-panel-list">
-                <li class="menu-title"><a href="#">Electronics</a></li>
-                <li class="panel-list-item"><a href="#">Smart Watch</a></li>
-                <li class="panel-list-item"><a href="#">Smart TV</a></li>
-                <li class="panel-list-item"><a href="#">Keyboard</a></li>
-                <li class="panel-list-item"><a href="#">Mouse</a></li>
-                <li class="panel-list-item"><a href="#">Microphone</a></li>
+                <li class="menu-title"><a href="#">配件/飾品</a></li>
+                <li class="panel-list-item"><a href="#">手錶</a></li>
+                <li class="panel-list-item"><a href="#">圍巾</a></li>
+                <li class="panel-list-item"><a href="#">髮飾</a></li>
+                <li class="panel-list-item"><a href="#">項鍊</a></li>
+                <li class="panel-list-item"><a href="#">戒指</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/electronics-banner-2.jpg"
@@ -187,7 +189,7 @@
             </ul>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">Jewelyr</a>
+            <a href="#" class="menu-title">筆記型電腦</a>
 
             <ul class="dropdown-list">
               <li class="dropdown-item"><a href="#">Earrings</a></li>
@@ -197,7 +199,7 @@
             </ul>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">Perfume</a>
+            <a href="#" class="menu-title">數位相機</a>
 
             <ul class="dropdown-list">
               <li class="dropdown-item"><a href="#">Clothes Perfume</a></li>
@@ -207,10 +209,10 @@
             </ul>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">Blog</a>
+            <a href="#" class="menu-title">關於我們</a>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">Hot Offers</a>
+            <a href="#" class="menu-title">最新消息</a>
           </li>
         </ul>
       </div>
@@ -218,22 +220,25 @@
     <!-- mobile-bottom-navigation -->
     <div class="mobile-bottom-navigation">
       <button class="action-btn" @click="toggleMobileNav('list1')">
-        <Icon icon="gg:menu-round" />
+        <Icon icon="gg:menu-round" style="color: #212121" />
       </button>
       <nuxt-link to="/cart">
         <button class="action-btn">
-          <Icon icon="material-symbols-light:shopping-bag" />
-          <span class="count">0</span>
+          <Icon
+            icon="material-symbols-light:shopping-bag"
+            style="color: #212121"
+          />
+          <span class="count" style="color: #212121">0</span>
         </button>
       </nuxt-link>
       <nuxt-link to="/cart/like">
         <button class="action-btn">
-          <Icon icon="mingcute:love-fill" />
-          <span class="count">0</span>
+          <Icon icon="mingcute:love-fill" style="color: #212121" />
+          <span class="count" style="color: #212121">0</span>
         </button>
       </nuxt-link>
       <button class="action-btn" @click="toggleMobileNav('list4')">
-        <Icon icon="mynaui:grid" />
+        <Icon icon="mynaui:grid" style="color: #212121" />
       </button>
     </div>
     <!-- mobile-navigation-menu -->
