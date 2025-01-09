@@ -7,7 +7,7 @@
         <table>
           <thead>
             <tr>
-              <th>刪除</th>
+              <th>編輯</th>
               <th>圖片</th>
               <th>名稱</th>
               <th>價格</th>

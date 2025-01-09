@@ -251,14 +251,10 @@
       <!-- mobile-navigation-menu-list -->
       <ul class="mobile-menu-category-list">
         <li class="menu-category">
-          <nuxt-link to="/">
-            <a href="#" class="menu-title">官網主頁</a>
-          </nuxt-link>
+          <a href="/" class="menu-title">官網主頁</a>
         </li>
         <li class="menu-category">
-          <nuxt-link to="/user/">
-            <a href="#" class="menu-title">個人資料</a>
-          </nuxt-link>
+          <a href="/user/" class="menu-title">個人資料</a>
         </li>
         <li class="menu-category">
           <button class="accordion-menu" @click="toggleNavMenu('list1')">

@@ -63,7 +63,7 @@
             required
           />
           <button class="acount-btn">
-            <Icon icon="mdi:password-outline" />
+            <Icon icon="material-symbols:account-box" />
           </button>
         </div>
         <div class="input-box">
@@ -96,7 +96,7 @@
             required
           />
           <button class="acount-btn">
-            <Icon icon="mdi:password-outline" />
+            <Icon icon="entypo:address" />
           </button>
         </div>
         <div class="input-box">
@@ -107,7 +107,7 @@
             required
           />
           <button class="acount-btn">
-            <Icon icon="mdi:password-outline" />
+            <Icon icon="line-md:phone" />
           </button>
         </div>
         <button class="register-btn">註冊</button>
