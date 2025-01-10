@@ -27,7 +27,7 @@
         </ul>
 
         <div class="header-alert-news">
-          <p><b>Free Shopping</b>This week Order Over - $55</p>
+          <p><b>2025冬季購物節</b> 1月到4月之間只要購買3000+即可免運</p>
         </div>
         <div class="header-top-actions">
           <div class="currency">
