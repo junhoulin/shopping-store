@@ -541,7 +541,7 @@ const toggleNavMenu = (menu) => {
 }
 
 .search-btn {
-  background: $white;
+  background: transparent;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

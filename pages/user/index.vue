@@ -37,7 +37,7 @@
           <ul>
             <li><strong>帳號:</strong> yy6313531@gmail.com</li>
             <li><strong>姓名:</strong> 林晉豪</li>
-            <li><strong>電話:</strong> 0978572009</li>
+            <li><strong>電話:</strong> 0978-572-009</li>
             <li><strong>地址:</strong> 高雄市阿蓮區中正路467巷48號</li>
             <li><strong>等級:</strong> 一般會員</li>
             <li><strong>累積:</strong> 已消費NT $2000</li>
@@ -266,6 +266,9 @@ td {
   background: $cultured;
   padding: 20px;
   max-width: 400px;
+  .title {
+    margin-bottom: 20px;
+  }
   .input-box {
     position: relative;
     margin-bottom: 20px;

@@ -55,7 +55,7 @@
         </div>
         <div class="product-content-cart">
           <select name="product-qty" id="">
-            <option value="" disabled selected>請選擇數量</option>
+            <option value="" disabled selected>數量</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -64,7 +64,7 @@
             <option value="6">6</option>
           </select>
           <select name="product-sizey" id="">
-            <option value="" disabled selected>請選擇尺寸</option>
+            <option value="" disabled selected>尺寸</option>
             <option value="size">XXL</option>
             <option value="size">XL</option>
             <option value="size">L</option>
@@ -72,7 +72,7 @@
             <option value="size">S</option>
           </select>
           <select name="product-sizey" id="">
-            <option value="" disabled selected>請選擇顏色</option>
+            <option value="" disabled selected>顏色</option>
             <option value="size">XXL</option>
             <option value="size">XL</option>
             <option value="size">L</option>
