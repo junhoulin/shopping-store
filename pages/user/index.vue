@@ -229,6 +229,8 @@ td {
   .user-info li {
     margin-bottom: 8px;
     color: $sonic-silver;
+    color: inherit;
+    text-decoration: none;
   }
   .user-info li strong {
     color: $eerie-black;
