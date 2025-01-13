@@ -226,6 +226,9 @@ td {
   background: $cultured;
   padding: 20px;
   width: 100%;
+  button {
+    color: hsl(0, 0%, 13%);
+  }
   .user-info li {
     margin-bottom: 8px;
     color: $sonic-silver;
