@@ -1,0 +1,31 @@
+# 忽略 node_modules 目錄
+node_modules
+
+# 忽略 Nuxt 的臨時文件夾
+.nuxt
+.output
+
+# 忽略 npm 或 Yarn 的日誌文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 忽略環境變數文件（包含敏感信息）
+.env
+.env.local
+.env.*.local
+
+# 忽略編譯輸出的文件夾（Nuxt 預設為 dist）
+dist
+
+# 其他常見的忽略文件
+.DS_Store
+*.swp
+*.log
+.idea
+.vscode
+*.cache
+
+# 如果使用 Git，忽略 Git 配置文件
+.git
+.gitignore
