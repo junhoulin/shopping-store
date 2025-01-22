@@ -51,6 +51,7 @@
             type="text"
             class="search-field"
             placeholder="請輸入姓名"
+            v-model="signupData.name"
             required
           />
           <button class="acount-btn">
@@ -61,7 +62,8 @@
           <input
             type="text"
             class="search-field"
-            placeholder="請輸入帳號"
+            placeholder="請輸入郵件"
+            v-model="signupData.email"
             required
           />
           <button class="acount-btn">
@@ -73,6 +75,7 @@
             type="password"
             class="search-field"
             placeholder="請輸入密碼"
+            v-model="signupData.password"
             required
           />
           <button class="acount-btn">
@@ -95,6 +98,7 @@
             type="text"
             class="search-field"
             placeholder="請輸入地址"
+            v-model="signupData.address"
             required
           />
           <button class="acount-btn">
@@ -103,16 +107,29 @@
         </div>
         <div class="input-box">
           <input
+            type="date"
+            class="search-field"
+            placeholder="請輸入生日"
+            v-model="signupData.birthday"
+            required
+          />
+          <button class="acount-btn">
+            <Icon icon="mdi:birthday-cake-outline" />
+          </button>
+        </div>
+        <div class="input-box">
+          <input
             type="text"
             class="search-field"
             placeholder="請輸入電話"
+            v-model="signupData.phone"
             required
           />
           <button class="acount-btn">
             <Icon icon="line-md:phone" />
           </button>
         </div>
-        <button class="register-btn">註冊</button>
+        <button class="register-btn" @click="signup">註冊</button>
         <div class="login-link">
           <a href="#" @click.prevent="toggleStatue"> 返回登入頁面</a>
         </div>
@@ -128,13 +145,13 @@ const toggleStatue = () => {
   loginStatue.value = !loginStatue.value;
 };
 
-// loginAPI串接
 const router = useRouter();
 const userCookie = useCookie("auth", {
   path: "/",
   maxAge: 60000,
 });
 
+// loginAPI串接
 const loginData = ref({
   email: "",
   password: "",
@@ -147,6 +164,32 @@ const login = async () => {
       baseURL: config.public.apiBase,
       method: "post",
       body: loginData.value,
+    });
+    console.log(res);
+    userCookie.value = res.token;
+    router.push("/user");
+  } catch (error) {
+    console.log(error.data);
+  }
+};
+
+// signup串接
+const signupData = ref({
+  name: "",
+  email: "",
+  password: "",
+  phone: "",
+  birthday: "",
+  address: "",
+});
+
+const signup = async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/user/signup", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      body: signupData.value,
     });
     console.log(res);
     userCookie.value = res.token;
