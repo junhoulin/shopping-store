@@ -32,6 +32,14 @@
           <button>
             <Icon icon="line-md:edit-full-twotone" width="24" height="24" />
           </button>
+          <button>
+            <Icon
+              icon="material-symbols:login"
+              @click="loginOut"
+              width="24"
+              height="24"
+            />
+          </button>
         </div>
         <div class="user-info">
           <ul>
@@ -145,9 +153,24 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: "user-login",
+});
+
+const router = useRouter();
+
 const activeMenu = ref("basic");
 const changeActive = (statue) => {
   activeMenu.value = statue;
+};
+
+const userCookie = useCookie("auth", {
+  path: "/",
+});
+
+const loginOut = () => {
+  userCookie.value = "";
+  router.push("/user/login");
 };
 </script>
 

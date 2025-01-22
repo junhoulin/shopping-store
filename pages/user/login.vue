@@ -8,7 +8,8 @@
           <input
             type="text"
             class="search-field"
-            placeholder="請輸入帳號"
+            placeholder="請輸入郵件"
+            v-model="loginData.email"
             required
           />
           <button class="acount-btn">
@@ -20,13 +21,14 @@
             type="password"
             class="search-field"
             placeholder="請輸入密碼"
+            v-model="loginData.password"
             required
           />
           <button class="acount-btn">
             <Icon icon="mdi:password-outline" />
           </button>
         </div>
-        <button class="login-btn">登入</button>
+        <button class="login-btn" @click="login">登入</button>
         <div class="add-fogot-link">
           <a href="#" @click.prevent="toggleStatue">加入會員</a>
           <a>|</a>
@@ -122,9 +124,36 @@
 
 <script setup>
 const loginStatue = ref(true);
-
 const toggleStatue = () => {
   loginStatue.value = !loginStatue.value;
+};
+
+// loginAPI串接
+const router = useRouter();
+const userCookie = useCookie("auth", {
+  path: "/",
+  maxAge: 60000,
+});
+
+const loginData = ref({
+  email: "",
+  password: "",
+});
+
+const login = async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/user/login", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      body: loginData.value,
+    });
+    console.log(res);
+    userCookie.value = res.token;
+    router.push("/user");
+  } catch (error) {
+    console.log(error.data);
+  }
 };
 </script>
 
