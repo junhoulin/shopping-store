@@ -1,5 +1,15 @@
 <template>
   <GlobalHeader />
+  <ClientOnly>
+    <loading v-model:active="isLoading">
+      <div class="loadingio-spinner-dual-ring-nq4q5u6dq7r">
+        <div class="ldio-x2uulkbinbj">
+          <div></div>
+          <div><div></div></div>
+        </div>
+      </div>
+    </loading>
+  </ClientOnly>
   <div class="container">
     <div class="user-form animate__animated animate__fadeIn">
       <div class="login-form" v-if="loginStatue">
@@ -141,6 +151,7 @@
 
 <script setup>
 const loginStatue = ref(true);
+const isLoading = ref(false);
 const toggleStatue = () => {
   loginStatue.value = !loginStatue.value;
 };
@@ -158,6 +169,7 @@ const loginData = ref({
 });
 
 const login = async () => {
+  isLoading.value = true;
   try {
     const config = useRuntimeConfig();
     const res = await $fetch("/user/login", {
@@ -165,11 +177,13 @@ const login = async () => {
       method: "post",
       body: loginData.value,
     });
-    console.log(res);
+    isLoading.value = false;
+    showAlert("登入成功", "success");
     userCookie.value = res.token;
     router.push("/user");
   } catch (error) {
-    console.log(error.data);
+    isLoading.value = false;
+    showAlert(error.data.message, "error");
   }
 };
 
@@ -184,6 +198,7 @@ const signupData = ref({
 });
 
 const signup = async () => {
+  isLoading.value = true;
   try {
     const config = useRuntimeConfig();
     const res = await $fetch("/user/signup", {
@@ -191,12 +206,29 @@ const signup = async () => {
       method: "post",
       body: signupData.value,
     });
-    console.log(res);
     userCookie.value = res.token;
+    isLoading.value = false;
+    showAlert("註冊成功", "success");
     router.push("/user");
   } catch (error) {
-    console.log(error.data);
+    isLoading.value = false;
+    showAlert(error.data.message, "error");
   }
+};
+// 提示框
+const showAlert = (text, icon) => {
+  const { $swal } = useNuxtApp();
+  $swal.fire({
+    text: text,
+    icon: icon,
+    confirmButtonText: "確定",
+    timer: 2000,
+    customClass: {
+      popup: "my-popup",
+      title: "my-title",
+      confirmButton: "my-button",
+    },
+  });
 };
 </script>
 
@@ -305,6 +337,7 @@ h2 {
 }
 
 .register-form {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,6 +351,7 @@ h2 {
     max-width: 300px;
     border-radius: $border-radius-md;
     height: 44px;
+    min-height: 44px;
     letter-spacing: 5px;
     margin-top: 30px;
     transition: $transition-timing;

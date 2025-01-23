@@ -30,7 +30,12 @@
         <div class="title">
           <h3>基本資料</h3>
           <button>
-            <Icon icon="line-md:edit-full-twotone" width="24" height="24" />
+            <Icon
+              icon="line-md:edit-full-twotone"
+              @click="showAlert"
+              width="24"
+              height="24"
+            />
           </button>
           <button>
             <Icon
@@ -171,6 +176,23 @@ const userCookie = useCookie("auth", {
 const loginOut = () => {
   userCookie.value = "";
   router.push("/user/login");
+  showAlert("登出成功", "success");
+};
+
+// 提示框
+const showAlert = (text, icon) => {
+  const { $swal } = useNuxtApp();
+  $swal.fire({
+    text: text,
+    icon: icon,
+    confirmButtonText: "確定",
+    timer: 2000,
+    customClass: {
+      popup: "my-popup",
+      title: "my-title",
+      confirmButton: "my-button",
+    },
+  });
 };
 </script>
 

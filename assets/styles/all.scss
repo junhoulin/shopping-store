@@ -1,6 +1,6 @@
 @use "~/assets/styles/variables" as *;
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
+@import "./loading.css";
 *,
 *::before,
 *::after {
@@ -74,6 +74,26 @@ input::placeholder {
 
 .has-scrollbar::-webkit-scrollbar-thumb:hover {
   background: hsl(0, 0%, 80%);
+}
+
+//alert設定
+.my-button {
+  background-color: $eerie-black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.my-button:hover {
+  background-color: $salmon-pink;
+}
+
+/* 針對日期輸入框的基本樣式 */
+.input-box input[type="date"] {
+  -webkit-appearance: none; /* 禁用Safari的預設樣式 */
+  -moz-appearance: none; /* 禁用Firefox的預設樣式 */
+  appearance: none; /* 禁用所有瀏覽器的預設樣式 */
 }
 
 // RWD設定

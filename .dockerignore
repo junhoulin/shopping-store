@@ -10,11 +10,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# 忽略環境變數文件（包含敏感信息）
-.env
-.env.local
-.env.*.local
-
 # 忽略編譯輸出的文件夾（Nuxt 預設為 dist）
 dist
 
