@@ -98,13 +98,15 @@
             <nuxt-link to="/" class="menu-title">主頁</nuxt-link>
           </li>
           <li class="menu-category">
-            <a href="" class="menu-title">檢視類別</a>
+            <a class="menu-title">檢視類別</a>
 
             <div class="dropdown-panel">
               <ul class="dropdown-panel-list">
                 <li class="menu-title"><a>檢視類別</a></li>
-                <div class="panel-list-item"><a href="#">主頁</a></div>
-                <div class="panel-list-item"><a href="#">筆記型電腦</a></div>
+                <div class="panel-list-item"><a href="/">主頁</a></div>
+                <div class="panel-list-item">
+                  <a href="/product/">全部商品</a>
+                </div>
                 <div class="panel-list-item"><a href="#">數位相機</a></div>
                 <div class="panel-list-item"><a href="#">五金百貨</a></div>
                 <div class="panel-list-item"><a href="#">生活用品</a></div>

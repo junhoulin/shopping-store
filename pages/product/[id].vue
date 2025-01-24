@@ -8,50 +8,34 @@
         </div>
         <div class="product-img-group has-scrollbar">
           <img
-            src="~public/images/products/jacket-1.jpg"
+            v-for="item in product.imageUrlList"
+            :key="item"
+            :src="item"
             alt=""
-            @click="updateMainImage('/images/products/jacket-1.jpg')"
-          />
-          <img
-            src="~public/images/products/jacket-2.jpg"
-            alt=""
-            @click="updateMainImage('/images/products/jacket-2.jpg')"
-          />
-          <img
-            src="~public/images/products/jacket-3.jpg"
-            alt=""
-            @click="updateMainImage('/images/products/jacket-3.jpg')"
-          />
-          <img
-            src="~public/images/products/jacket-4.jpg"
-            alt=""
-            @click="updateMainImage('/images/products/jacket-4.jpg')"
-          />
-          <img
-            src="~public/images/products/jacket-4.jpg"
-            alt=""
-            @click="updateMainImage('/images/products/jacket-4.jpg')"
-          />
-          <img
-            src="~public/images/products/jacket-4.jpg"
-            alt=""
-            @click="updateMainImage('/images/products/jacket-4.jpg')"
+            @click="updateMainImage(`${item}`)"
           />
         </div>
       </div>
       <div class="product-content">
-        <h3 class="product-content-category">Home / T-shirt</h3>
+        <h3 class="product-content-category">
+          主頁 /
+          {{ product.category ? product.category.join(" / ") : "" }}
+        </h3>
         <div class="product-hashtag">
           <a href="#">冬季新品</a>
           <a href="#">限定優惠</a>
           <a href="#">補貨中</a>
         </div>
         <a href="#" class="product-content-title">
-          <h2 class="product-content-title">Men Fashion T-Shirt</h2>
+          <h2 class="product-content-title">
+            {{ product.name || "*******" }}
+          </h2>
         </a>
         <div class="price-box">
-          <p class="price">$150.00</p>
-          <del>$200.00</del>
+          <p class="price">
+            ${{ product.price * (1 - discount).toFixed(2) || "*********" }}
+          </p>
+          <del>${{ product.price || "******" }}</del>
         </div>
         <div class="product-content-cart">
           <select name="product-qty" id="">
@@ -88,14 +72,14 @@
         </div>
         <div class="product-content-detail">產品介紹</div>
         <p class="product-content-detail-info">
-          這款 Men Fashion T-Shirt 採用高品質純棉材質製成，
-          觸感柔軟、透氣舒適，適合四季穿著。簡約的設計結合經典的剪裁，無論是日常休閒還是戶外活動，都能展現您的個性魅力。
-          特色包含： 舒適面料：高密度織法的純棉材質，耐穿耐洗，不易變形。
-          多種顏色選擇：提供黑色、白色、灰色、藍色等經典配色，滿足不同穿搭需求。
-          時尚剪裁：修身但不緊身的設計，適合多種身形。
-          此外，我們特別注重細節處理：精緻的車工走線，耐用且不易脫線；領口、袖口和下擺均經過強化處理，穿著更舒適自然。
-          這款 T-Shirt
-          不僅適合單穿，還可以作為內搭服飾，與外套、牛仔褲或運動褲輕鬆搭配，打造多樣風格。
+          {{ product.description || "*********" }}
+        </p>
+        <p
+          class="product-content-detail-info1"
+          v-for="(description, index) in product.descriptionList"
+          :key="index"
+        >
+          ✨ {{ description || "*********" }}
         </p>
       </div>
     </div>
@@ -104,7 +88,7 @@
 </template>
 
 <script setup>
-const currentImage = ref("/images/products/jacket-1.jpg");
+const currentImage = ref("");
 const imageClass = ref("product-img-main");
 const updateMainImage = (newImage) => {
   imageClass.value = "product-img-main";
@@ -113,6 +97,29 @@ const updateMainImage = (newImage) => {
     imageClass.value = "product-img-main animate__animated animate__bounceIn";
   }, 10); // 這裡延遲 10ms 確保類別被正確更新
 };
+
+//取得產品資料
+const route = useRoute();
+const productId = route.params.id;
+const product = ref([]);
+const getOneProduct = async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch(`/product/getoneproduct/${productId}`, {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+    currentImage.value = res.result.imageUrl;
+    product.value = res.result;
+  } catch (error) {}
+};
+
+onMounted(async () => {
+  await getOneProduct();
+});
+
+//折價
+const discount = ref(0.1);
 </script>
 
 <style lang="scss" scoped>
@@ -256,6 +263,12 @@ const updateMainImage = (newImage) => {
     color: $eerie-black;
     margin-bottom: 8px;
     font-weight: $weight-600;
+  }
+  .product-content-detail-info {
+    margin-bottom: 20px;
+  }
+  .product-content-detail-info1 {
+    margin-top: 10px;
   }
 }
 
