@@ -107,7 +107,13 @@
                 <div class="panel-list-item">
                   <a href="/product/">全部商品</a>
                 </div>
-                <div class="panel-list-item"><a href="#">數位相機</a></div>
+                <div class="panel-list-item">
+                  <NuxtLink
+                    :to="{ path: '/product/', query: { name: '數位相機' } }"
+                  >
+                    數位相機
+                  </NuxtLink>
+                </div>
                 <div class="panel-list-item"><a href="#">五金百貨</a></div>
                 <div class="panel-list-item"><a href="#">生活用品</a></div>
                 <div class="panel-list-item">

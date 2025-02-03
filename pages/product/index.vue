@@ -92,7 +92,10 @@ const allProduct = ref([]);
 const allProductMount = ref(0);
 const discount = ref(0.1);
 const sortMethod = ref("");
+const route = useRoute();
+const productName = route.query.name;
 
+console.log(productName);
 const updateSort = (event) => {
   sortMethod.value = event.target.value;
   getAllProduct(sortMethod.value);
