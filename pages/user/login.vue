@@ -157,6 +157,7 @@ const toggleStatue = () => {
 };
 
 const router = useRouter();
+
 const userCookie = useCookie("auth", {
   path: "/",
   maxAge: 60000,

@@ -113,7 +113,17 @@
   <GlobalFooter />
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+  middleware: "user-login",
+});
+
+const userCookie = useCookie("auth", {
+  path: "/",
+});
+
+console.log(userCookie);
+</script>
 
 <style lang="scss" scoped>
 @use "~/assets/styles/variables" as *;

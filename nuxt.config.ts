@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     "animate.css",
     "sweetalert2/dist/sweetalert2.min.css",
   ],
-
   plugins: ["~/plugins/iconify.js", "~/plugins/loading.client.js"],
   components: {
     dirs: ["~/components"],

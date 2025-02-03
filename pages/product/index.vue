@@ -13,14 +13,12 @@
   <div class="container">
     <div class="search-flex animate__animated animate__fadeIn">
       <div class="search-top">
-        <p>搜尋 全部 的結果,共搜尋到29筆資料</p>
+        <p>搜尋 全部 的結果,共搜尋到{{ allProductMount }}筆資料</p>
         <div class="seach-category">
-          <select name="" id="">
+          <select id="sortSelect" @change="updateSort">
             <option value="" disabled selected>排序方法</option>
             <option value="1">價格由高至低</option>
             <option value="2">價格由低至高</option>
-            <option value="3">活動特賣中</option>
-            <option value="4">特別活動限定</option>
           </select>
         </div>
       </div>
@@ -91,8 +89,16 @@
 <script setup>
 const isLoading = ref(false);
 const allProduct = ref([]);
+const allProductMount = ref(0);
 const discount = ref(0.1);
-const getAllProduct = async () => {
+const sortMethod = ref("");
+
+const updateSort = (event) => {
+  sortMethod.value = event.target.value;
+  getAllProduct(sortMethod.value);
+};
+
+const getAllProduct = async (sortType) => {
   isLoading.value = true;
   try {
     const config = useRuntimeConfig();
@@ -100,17 +106,23 @@ const getAllProduct = async () => {
       baseURL: config.public.apiBase,
       method: "get",
     });
-    allProduct.value = res.result.map((product) => {
-      return {
-        id: product._id,
-        name: product.name,
-        category: product.category || [],
-        price: product.price,
-        imageUrl: product.imageUrl,
-      };
-    });
+    let products = res.result.map((product) => ({
+      id: product._id,
+      name: product.name,
+      category: product.category || [],
+      price: product.price,
+      imageUrl: product.imageUrl,
+    }));
+    let sortedProducts = [...products];
+    if (sortType === "1") {
+      sortedProducts.sort((a, b) => b.price - a.price); // 價格由高至低
+    } else if (sortType === "2") {
+      sortedProducts.sort((a, b) => a.price - b.price); // 價格由低至高
+    }
+
+    allProduct.value = sortedProducts;
     isLoading.value = false;
-    console.log(allProduct.value);
+    allProductMount.value = allProduct.value.length;
   } catch (error) {
     console.log(error);
     isLoading.value = false;
