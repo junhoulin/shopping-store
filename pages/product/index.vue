@@ -13,7 +13,11 @@
   <div class="container">
     <div class="search-flex animate__animated animate__fadeIn">
       <div class="search-top">
-        <p>搜尋 全部 的結果,共搜尋到{{ allProductMount }}筆資料</p>
+        <p>
+          搜尋 <span>{{ productName || "全部" }}</span> 的結果,共搜尋到{{
+            allProductMount
+          }}筆資料
+        </p>
         <div class="seach-category">
           <select id="sortSelect" @change="updateSort">
             <option value="" disabled selected>排序方法</option>
@@ -174,6 +178,9 @@ onMounted(() => {
     color: $sonic-silver;
     font-size: $fs-9;
     font-weight: $weight-600;
+    span {
+      color: $bittersweet;
+    }
   }
   .seach-category {
     margin: 10px 0;

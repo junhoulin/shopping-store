@@ -12,10 +12,14 @@
           </div>
           <div class="category-content-box">
             <div class="category-content-flex">
-              <h3 class="category-item-title">Dress & fork</h3>
+              <h3 class="category-item-title">長袖襯衫</h3>
               <p class="category-item-amount">(53)</p>
             </div>
-            <a class="category-btn">show all</a>
+            <NuxtLink
+              :to="{ path: '/product/', query: { name: '長袖襯衫' } }"
+              class="category-btn"
+              >查看商品
+            </NuxtLink>
           </div>
         </div>
         <div class="category-item">
@@ -29,16 +33,20 @@
 
           <div class="category-content-box">
             <div class="category-content-flex">
-              <h3 class="category-item-title">Winter Wear</h3>
+              <h3 class="category-item-title">長袖上衣</h3>
               <p class="category-item-amount">(58)</p>
             </div>
-            <a href="#" class="category-btn">Show All</a>
+            <NuxtLink
+              :to="{ path: '/product/', query: { name: '長袖上衣' } }"
+              class="category-btn"
+              >查看商品
+            </NuxtLink>
           </div>
         </div>
         <div class="category-item">
           <div class="category-img-box">
             <img
-              src="~public/images/icons/glasses.svg"
+              src="~public/images/icons/jacket.svg"
               alt="winter wear"
               width="30"
             />
@@ -46,10 +54,14 @@
 
           <div class="category-content-box">
             <div class="category-content-flex">
-              <h3 class="category-item-title">Winter Wear</h3>
+              <h3 class="category-item-title">外套</h3>
               <p class="category-item-amount">(58)</p>
             </div>
-            <a href="#" class="category-btn">Show All</a>
+            <NuxtLink
+              :to="{ path: '/product/', query: { name: '外套' } }"
+              class="category-btn"
+              >查看商品
+            </NuxtLink>
           </div>
         </div>
         <div class="category-item">
@@ -63,7 +75,7 @@
 
           <div class="category-content-box">
             <div class="category-content-flex">
-              <h3 class="category-item-title">Winter Wear</h3>
+              <h3 class="category-item-title">短褲</h3>
               <p class="category-item-amount">(58)</p>
             </div>
             <a href="#" class="category-btn">Show All</a>
@@ -80,24 +92,7 @@
 
           <div class="category-content-box">
             <div class="category-content-flex">
-              <h3 class="category-item-title">tee</h3>
-              <p class="category-item-amount">(58)</p>
-            </div>
-            <a href="#" class="category-btn">Show All</a>
-          </div>
-        </div>
-        <div class="category-item">
-          <div class="category-img-box">
-            <img
-              src="~public/images/icons/jacket.svg"
-              alt="winter wear"
-              width="30"
-            />
-          </div>
-
-          <div class="category-content-box">
-            <div class="category-content-flex">
-              <h3 class="category-item-title">tee</h3>
+              <h3 class="category-item-title">背心</h3>
               <p class="category-item-amount">(58)</p>
             </div>
             <a href="#" class="category-btn">Show All</a>
