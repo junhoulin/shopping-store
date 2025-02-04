@@ -92,16 +92,15 @@ const allProduct = ref([]);
 const allProductMount = ref(0);
 const discount = ref(0.1);
 const sortMethod = ref("");
-const route = useRoute();
-const productName = route.query.name;
+const router = useRoute();
+const productName = ref("");
 
-console.log(productName);
 const updateSort = (event) => {
   sortMethod.value = event.target.value;
   getAllProduct(sortMethod.value);
 };
 
-const getAllProduct = async (sortType) => {
+const getAllProduct = async (sortType, productType) => {
   isLoading.value = true;
   try {
     const config = useRuntimeConfig();
@@ -109,6 +108,7 @@ const getAllProduct = async (sortType) => {
       baseURL: config.public.apiBase,
       method: "get",
     });
+
     let products = res.result.map((product) => ({
       id: product._id,
       name: product.name,
@@ -116,7 +116,16 @@ const getAllProduct = async (sortType) => {
       price: product.price,
       imageUrl: product.imageUrl,
     }));
+    // 如果 productType 有值，篩選 category 包含該類別的產品
+    if (productType) {
+      console.log("🔍 篩選 productType:", productType);
+      products = products.filter((product) =>
+        product.category.includes(productType)
+      );
+    }
+
     let sortedProducts = [...products];
+
     if (sortType === "1") {
       sortedProducts.sort((a, b) => b.price - a.price); // 價格由高至低
     } else if (sortType === "2") {
@@ -136,8 +145,19 @@ const discountPercentage = computed(() => {
   return (discount.value * 100).toFixed(0);
 });
 
+watch(
+  () => router.query.name,
+  (newName) => {
+    if (newName) {
+      productName.value = newName;
+      getAllProduct("", productName.value);
+    }
+  },
+  { immediate: true }
+);
+
 onMounted(() => {
-  getAllProduct();
+  getAllProduct("", productName.value);
 });
 </script>
 

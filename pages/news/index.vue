@@ -1,11 +1,6 @@
 <template>
-  <Modal />
-  <div class="main">
-    <GlobalHeader />
-    <banner />
-    <category />
-    <product />
-  </div>
+  <GlobalHeader />
+  <CardBlog />
   <GlobalFooter />
 </template>
 

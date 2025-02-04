@@ -108,14 +108,10 @@
                   <a href="/product/">全部商品</a>
                 </div>
                 <div class="panel-list-item">
-                  <NuxtLink
-                    :to="{ path: '/product/', query: { name: '數位相機' } }"
-                  >
-                    數位相機
-                  </NuxtLink>
+                  <a href="#">未啟用</a>
                 </div>
-                <div class="panel-list-item"><a href="#">五金百貨</a></div>
-                <div class="panel-list-item"><a href="#">生活用品</a></div>
+                <div class="panel-list-item"><a href="#">未啟用</a></div>
+                <div class="panel-list-item"><a href="#">未啟用</a></div>
                 <div class="panel-list-item">
                   <a href="#">
                     <img
@@ -129,11 +125,29 @@
               </ul>
               <ul class="dropdown-panel-list">
                 <li class="menu-title"><a href="#">男性服飾</a></li>
-                <li class="panel-list-item"><a href="#">短袖上衣</a></li>
-                <li class="panel-list-item"><a href="#">長袖上衣</a></li>
-                <li class="panel-list-item"><a href="#">長褲</a></li>
-                <li class="panel-list-item"><a href="#">短褲</a></li>
-                <li class="panel-list-item"><a href="#">外套</a></li>
+                <li class="panel-list-item">
+                  <NuxtLink
+                    :to="{ path: '/product/', query: { name: '長袖襯衫' } }"
+                  >
+                    長袖襯衫
+                  </NuxtLink>
+                </li>
+                <li class="panel-list-item">
+                  <NuxtLink
+                    :to="{ path: '/product/', query: { name: '長袖上衣' } }"
+                  >
+                    長袖上衣
+                  </NuxtLink>
+                </li>
+                <li class="panel-list-item">
+                  <NuxtLink
+                    :to="{ path: '/product/', query: { name: '外套' } }"
+                  >
+                    外套
+                  </NuxtLink>
+                </li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/mens-banner.jpg"
@@ -145,11 +159,11 @@
               </ul>
               <ul class="dropdown-panel-list">
                 <li class="menu-title"><a href="#">女性服飾</a></li>
-                <li class="panel-list-item"><a href="#">短袖上衣</a></li>
-                <li class="panel-list-item"><a href="#">長袖上衣</a></li>
-                <li class="panel-list-item"><a href="#">長褲</a></li>
-                <li class="panel-list-item"><a href="#">短褲</a></li>
-                <li class="panel-list-item"><a href="#">外套</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/womens-banner.jpg"
@@ -161,11 +175,11 @@
               </ul>
               <ul class="dropdown-panel-list">
                 <li class="menu-title"><a href="#">配件/飾品</a></li>
-                <li class="panel-list-item"><a href="#">手錶</a></li>
-                <li class="panel-list-item"><a href="#">圍巾</a></li>
-                <li class="panel-list-item"><a href="#">髮飾</a></li>
-                <li class="panel-list-item"><a href="#">項鍊</a></li>
-                <li class="panel-list-item"><a href="#">戒指</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
+                <li class="panel-list-item"><a href="#">未啟用</a></li>
                 <li class="panel-list-item">
                   <img
                     src="~/public/images/electronics-banner-2.jpg"
@@ -180,47 +194,51 @@
           <li class="menu-category">
             <a href="" class="menu-title">男生</a>
             <ul class="dropdown-list">
-              <li class="dropdown-item"><a href="#">Shirt</a></li>
-              <li class="dropdown-item"><a href="#">Shorts & Jeans</a></li>
-              <li class="dropdown-item"><a href="#">Safety Shoes</a></li>
-              <li class="dropdown-item"><a href="#">Wallet</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
             </ul>
           </li>
           <li class="menu-category">
             <a href="#" class="menu-title">女生</a>
 
             <ul class="dropdown-list">
-              <li class="dropdown-item"><a href="#">Dress & Frock</a></li>
-              <li class="dropdown-item"><a href="#">Earrings</a></li>
-              <li class="dropdown-item"><a href="#">Necklace</a></li>
-              <li class="dropdown-item"><a href="#">Makeup Kit</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
             </ul>
           </li>
           <li class="menu-category">
             <a href="#" class="menu-title">筆記型電腦</a>
 
             <ul class="dropdown-list">
-              <li class="dropdown-item"><a href="#">Earrings</a></li>
-              <li class="dropdown-item"><a href="#">Couple Rings</a></li>
-              <li class="dropdown-item"><a href="#">Necklace</a></li>
-              <li class="dropdown-item"><a href="#">Bracelets</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
             </ul>
           </li>
           <li class="menu-category">
             <a href="#" class="menu-title">數位相機</a>
 
             <ul class="dropdown-list">
-              <li class="dropdown-item"><a href="#">Clothes Perfume</a></li>
-              <li class="dropdown-item"><a href="#">Deodorant</a></li>
-              <li class="dropdown-item"><a href="#">Flower Fragrance</a></li>
-              <li class="dropdown-item"><a href="#">Air Freshener</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
+              <li class="dropdown-item"><a href="#">未啟用</a></li>
             </ul>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">關於我們</a>
+            <NuxtLink class="menu-title" :to="{ path: '/about/' }">
+              關於我們
+            </NuxtLink>
           </li>
           <li class="menu-category">
-            <a href="#" class="menu-title">最新消息</a>
+            <NuxtLink class="menu-title" :to="{ path: '/news/' }">
+              最新消息
+            </NuxtLink>
           </li>
         </ul>
       </div>

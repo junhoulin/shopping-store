@@ -9,13 +9,10 @@
             alt="banner-img"
           />
           <div class="banner-content">
-            <p class="banner-subtitle">Trending item</p>
-            <h2 class="banner-title">
-              Women's <br />latest<br />
-              fashion sale
-            </h2>
-            <p class="banner-text">Starting at &dollar; <b>20</b>.00</p>
-            <a href="#" class="banner-btn">shop now</a>
+            <p class="banner-subtitle">2025 冬季大特賣</p>
+            <h2 class="banner-title">女士冬季<br />超級特惠</h2>
+            <p class="banner-text">限時優惠，低至 <b>$20元</b> 起！</p>
+            <a href="#" class="banner-btn">立即搶購</a>
           </div>
         </div>
         <div class="slider-item">
@@ -25,10 +22,10 @@
             alt="banner-img"
           />
           <div class="banner-content">
-            <p class="banner-subtitle">Trending item</p>
-            <h2 class="banner-title">Women's latest fashion sale</h2>
-            <p class="banner-text">Starting at &dollar; <b>20</b>.00</p>
-            <a href="#" class="banner-btn">shop now</a>
+            <p class="banner-subtitle">2025 冬季大特賣</p>
+            <h2 class="banner-title">女士冬季<br />超級特惠</h2>
+            <p class="banner-text">限時優惠，低至 <b>$20元</b> 起！</p>
+            <a href="#" class="banner-btn">立即搶購</a>
           </div>
         </div>
         <div class="slider-item">
@@ -38,10 +35,10 @@
             alt="banner-img"
           />
           <div class="banner-content">
-            <p class="banner-subtitle">Trending item</p>
-            <h2 class="banner-title">Women's latest fashion sale</h2>
-            <p class="banner-text">Starting at &dollar; <b>20</b>.00</p>
-            <a href="#" class="banner-btn">shop now</a>
+            <p class="banner-subtitle">2025 冬季大特賣</p>
+            <h2 class="banner-title">女士冬季<br />超級特惠</h2>
+            <p class="banner-text">限時優惠，低至 <b>$20元</b> 起！</p>
+            <a href="#" class="banner-btn">立即搶購</a>
           </div>
         </div>
       </div>
@@ -96,10 +93,11 @@
     font-size: $fs-7;
     font-weight: $weight-500;
     text-transform: capitalize;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 10px;
   }
   .banner-title {
+    letter-spacing: 1px;
     color: $eerie-black;
     font-size: $fs-1;
     text-transform: uppercase;
