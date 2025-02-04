@@ -2,66 +2,58 @@
   <footer>
     <div class="footer-category">
       <div class="container">
-        <h2 class="footer-category-title">Brand Directory</h2>
+        <h2 class="footer-category-title">品牌目錄</h2>
 
         <div class="footer-category-box">
-          <h3 class="category-box-title">Fashion :</h3>
-
-          <a href="#" class="footer-category-link">T-Shirt</a>
-          <a href="#" class="footer-category-link">Shirts</a>
-          <a href="#" class="footer-category-link">Shorts & Jeans</a>
-          <a href="#" class="footer-category-link">Jacket</a>
-          <a href="#" class="footer-category-link">Dress & Frock</a>
-          <a href="#" class="footer-category-link">Innerwear</a>
-          <a href="#" class="footer-category-link">Hosiery</a>
+          <h3 class="category-box-title">潮流外套 :</h3>
+          <a class="footer-category-link">日皮皮衣外套</a>
+          <a class="footer-category-link">皮草外套</a>
+          <a class="footer-category-link">風衣外套</a>
+          <a class="footer-category-link">羽絨外套</a>
+          <a class="footer-category-link">牛仔外套</a>
+          <a class="footer-category-link">羊毛外套</a>
+          <a class="footer-category-link">大衣外套</a>
+          <a class="footer-category-link">運動外套</a>
         </div>
 
         <div class="footer-category-box">
-          <h3 class="category-box-title">Footwear :</h3>
-
-          <a href="#" class="footer-category-link">Sport</a>
-          <a href="#" class="footer-category-link">Formal</a>
-          <a href="#" class="footer-category-link">Boots</a>
-          <a href="#" class="footer-category-link">Casual</a>
-          <a href="#" class="footer-category-link">Cowboy Shoes</a>
-          <a href="#" class="footer-category-link">Safety Shoes</a>
-          <a href="#" class="footer-category-link">Party Wear Shoes</a>
-          <a href="#" class="footer-category-link">Branded</a>
-          <a href="#" class="footer-category-link">Firstcopy</a>
-          <a href="#" class="footer-category-link">Long Shoes</a>
+          <h3 class="category-box-title">潮流上衣 :</h3>
+          <a class="footer-category-link">日系短袖上衣</a>
+          <a class="footer-category-link">印花長袖T恤</a>
+          <a class="footer-category-link">襯衫上衣</a>
+          <a class="footer-category-link">運動T恤</a>
+          <a class="footer-category-link">套頭衫</a>
+          <a class="footer-category-link">針織上衣</a>
+          <a class="footer-category-link">開襟外套</a>
+          <a class="footer-category-link">V領上衣</a>
+          <a class="footer-category-link">拼接設計上衣</a>
+          <a class="footer-category-link">長版上衣</a>
         </div>
 
         <div class="footer-category-box">
-          <h3 class="category-box-title">Jewellery :</h3>
-
-          <a href="#" class="footer-category-link">Necklace</a>
-          <a href="#" class="footer-category-link">Earrings</a>
-          <a href="#" class="footer-category-link">Couple Rings</a>
-          <a href="#" class="footer-category-link">Pendant</a>
-          <a href="#" class="footer-category-link">Crystal</a>
-          <a href="#" class="footer-category-link">Bangles</a>
-          <a href="#" class="footer-category-link">Bracelets</a>
-          <a href="#" class="footer-category-link">Nosepin</a>
-          <a href="#" class="footer-category-link">Chain</a>
+          <h3 class="category-box-title">潮流褲子 :</h3>
+          <a class="footer-category-link">窄款牛仔褲</a>
+          <a class="footer-category-link">休閒長褲</a>
+          <a class="footer-category-link">運動褲</a>
+          <a class="footer-category-link">寬鬆褲</a>
+          <a class="footer-category-link">短褲</a>
+          <a class="footer-category-link">工裝褲</a>
         </div>
 
         <div class="footer-category-box">
-          <h3 class="category-box-title">Cosmetics :</h3>
-
-          <a href="#" class="footer-category-link">Shampoo</a>
-          <a href="#" class="footer-category-link">Bodywash</a>
-          <a href="#" class="footer-category-link">Facewash</a>
-          <a href="#" class="footer-category-link">Makeup Kit</a>
-          <a href="#" class="footer-category-link">Liner</a>
-          <a href="#" class="footer-category-link">Lipstick</a>
-          <a href="#" class="footer-category-link">Perfume</a>
-          <a href="#" class="footer-category-link">Body Soap</a>
-          <a href="#" class="footer-category-link">Scrub</a>
-          <a href="#" class="footer-category-link">Hair Gel</a>
-          <a href="#" class="footer-category-link">Hair Colors</a>
-          <a href="#" class="footer-category-link">Hair Dye</a>
-          <a href="#" class="footer-category-link">Sunscreen</a>
-          <a href="#" class="footer-category-link">Skin Loson</a>
+          <h3 class="category-box-title">潮流配飾 :</h3>
+          <a class="footer-category-link">項鍊</a>
+          <a class="footer-category-link">手錶</a>
+          <a class="footer-category-link">手環</a>
+          <a class="footer-category-link">眼鏡</a>
+          <a class="footer-category-link">帽子</a>
+          <a class="footer-category-link">皮帶</a>
+          <a class="footer-category-link">圍巾</a>
+          <a class="footer-category-link">手套</a>
+          <a class="footer-category-link">耳環</a>
+          <a class="footer-category-link">錢包</a>
+          <a class="footer-category-link">背包</a>
+          <a class="footer-category-link">鞋帶</a>
         </div>
       </div>
     </div>
@@ -69,90 +61,90 @@
       <div class="container">
         <ul class="footer-nav-list">
           <li class="footer-nav-item">
-            <h2 class="nav-title">Popular Categories</h2>
+            <h2 class="nav-title">熱門分類</h2>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Fashion</a>
+            <a class="footer-nav-link">- 時尚</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Electronic</a>
+            <a class="footer-nav-link">- 電子產品</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Cosmetic</a>
+            <a class="footer-nav-link">- 化妝品</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Health</a>
+            <a class="footer-nav-link">- 健康</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Watches</a>
+            <a class="footer-nav-link">- 手錶</a>
           </li>
         </ul>
 
         <ul class="footer-nav-list">
-          <li class="footer-nav-item"><h2 class="nav-title">Products</h2></li>
+          <li class="footer-nav-item"><h2 class="nav-title">- 產品</h2></li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Fashion</a>
+            <a class="footer-nav-link">- 時尚</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Electronic</a>
+            <a class="footer-nav-link">- 電子產品</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Cosmetic</a>
+            <a class="footer-nav-link">- 化妝品</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Health</a>
+            <a class="footer-nav-link">- 健康</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Watches</a>
+            <a class="footer-nav-link">- 手錶</a>
           </li>
         </ul>
 
         <ul class="footer-nav-list">
           <li class="footer-nav-item">
-            <h2 class="nav-title">Our Company</h2>
+            <h2 class="nav-title">我們的公司</h2>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Delivery</a>
+            <a class="footer-nav-link">- 配送</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Legal Notice</a>
+            <a class="footer-nav-link">- 法律通知</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Terms and Conditions</a>
+            <a class="footer-nav-link">- 條款和條件</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">About us</a>
+            <a class="footer-nav-link">- 關於我們</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Secure Payment</a>
+            <a class="footer-nav-link">- 安全支付</a>
           </li>
         </ul>
 
         <ul class="footer-nav-list">
-          <li class="footer-nav-item"><h2 class="nav-title">Services</h2></li>
+          <li class="footer-nav-item"><h2 class="nav-title">服務</h2></li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Prices Drop</a>
+            <a class="footer-nav-link">- 價格下降</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">New Products</a>
+            <a class="footer-nav-link">- 新品</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Best Sales</a>
+            <a class="footer-nav-link">- 最佳銷售</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Contact us</a>
+            <a class="footer-nav-link">- 聯繫我們</a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Sitemap</a>
+            <a class="footer-nav-link">- 網站地圖</a>
           </li>
         </ul>
 
         <ul class="footer-nav-list">
-          <li class="footer-nav-item"><h2 class="nav-title">Contact</h2></li>
+          <li class="footer-nav-item"><h2 class="nav-title">聯繫方式</h2></li>
 
           <li class="footer-nav-item flex">
             <div class="icon-box">
@@ -160,7 +152,7 @@
             </div>
 
             <address class="content">
-              419 State 414 Rte Beaver Dams, New York(NY), 14812, USA
+              台灣 - 台中市 西屯區 西屯路三段 95號
             </address>
           </li>
 
@@ -186,32 +178,32 @@
         </ul>
 
         <ul class="footer-nav-list">
-          <li class="footer-nav-item"><h2 class="nav-title">Follow Us</h2></li>
+          <li class="footer-nav-item"><h2 class="nav-title">關注我們</h2></li>
 
           <li>
             <ul class="social-link">
               <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link"
-                  ><Icon icon="ic:baseline-facebook"
-                /></a>
+                <a href="#" class="footer-nav-link">
+                  <Icon icon="ic:baseline-facebook" />
+                </a>
               </li>
 
               <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link"
-                  ><Icon icon="mdi:twitter"
-                /></a>
+                <a href="#" class="footer-nav-link">
+                  <Icon icon="mdi:twitter" />
+                </a>
               </li>
 
               <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link"
-                  ><Icon icon="ri:instagram-fill"
-                /></a>
+                <a href="#" class="footer-nav-link">
+                  <Icon icon="ri:instagram-fill" />
+                </a>
               </li>
 
               <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link"
-                  ><Icon icon="mdi:github"
-                /></a>
+                <a href="#" class="footer-nav-link">
+                  <Icon icon="mdi:github" />
+                </a>
               </li>
             </ul>
           </li>

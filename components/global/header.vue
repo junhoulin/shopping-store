@@ -274,7 +274,7 @@
     >
       <!-- mobile-navigation-menu-top -->
       <div class="menu-top">
-        <div class="menu-title">Menu</div>
+        <div class="menu-title">官網目錄</div>
         <button class="menu-close-btn" @click="toggleMobileNav('list1')">
           <Icon icon="material-symbols:close" />
         </button>
@@ -282,14 +282,14 @@
       <!-- mobile-navigation-menu-list -->
       <ul class="mobile-menu-category-list">
         <li class="menu-category">
-          <a href="/" class="menu-title">官網主頁</a>
+          <nuxt-link to="/" class="menu-title">官網主頁</nuxt-link>
         </li>
         <li class="menu-category">
-          <a href="/user/" class="menu-title">個人資料</a>
+          <a href="/user/login" class="menu-title">個人資料</a>
         </li>
         <li class="menu-category">
           <button class="accordion-menu" @click="toggleNavMenu('list1')">
-            <p class="menu-title">sadasd</p>
+            <p class="menu-title">已販售商品</p>
             <div>
               <Icon
                 icon="material-symbols:add"
@@ -304,13 +304,28 @@
             :class="{ active: activeMenu.list1 }"
           >
             <li class="submenu-category">
-              <a href="#" class="submenu-title">Shirt</a>
+              <NuxtLink
+                :to="{ path: '/product/', query: { name: '長袖襯衫' } }"
+                class="submenu-title"
+              >
+                長袖襯衫
+              </NuxtLink>
             </li>
             <li class="submenu-category">
-              <a href="#" class="submenu-title">Short & Jeans</a>
+              <NuxtLink
+                :to="{ path: '/product/', query: { name: '長袖上衣' } }"
+                class="submenu-title"
+              >
+                長袖上衣
+              </NuxtLink>
             </li>
             <li class="submenu-category">
-              <a href="#" class="submenu-title">Safety Shoes</a>
+              <NuxtLink
+                :to="{ path: '/product/', query: { name: '外套' } }"
+                class="submenu-title"
+              >
+                外套
+              </NuxtLink>
             </li>
             <li class="submenu-category">
               <a href="#" class="submenu-title">Wallet</a>
