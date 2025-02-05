@@ -121,6 +121,7 @@
             class="search-field"
             placeholder="請輸入生日"
             v-model="signupData.birthday"
+            :max="today"
             required
           />
           <button class="acount-btn">
@@ -152,6 +153,8 @@
 <script setup>
 const loginStatue = ref(true);
 const isLoading = ref(false);
+const today = new Date().toISOString().split("T")[0];
+
 const toggleStatue = () => {
   loginStatue.value = !loginStatue.value;
 };
@@ -194,7 +197,7 @@ const signupData = ref({
   email: "",
   password: "",
   phone: "",
-  birthday: "",
+  birthday: today,
   address: "",
 });
 

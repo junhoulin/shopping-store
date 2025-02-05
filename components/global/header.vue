@@ -285,7 +285,7 @@
           <nuxt-link to="/" class="menu-title">官網主頁</nuxt-link>
         </li>
         <li class="menu-category">
-          <a href="/user/login" class="menu-title">個人資料</a>
+          <nuxt-link class="menu-title" to="/user/">個人資料</nuxt-link>
         </li>
         <li class="menu-category">
           <button class="accordion-menu" @click="toggleNavMenu('list1')">

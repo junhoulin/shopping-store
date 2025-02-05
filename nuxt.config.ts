@@ -15,4 +15,21 @@ export default defineNuxtConfig({
       apiBase: process.env.NUXT_PUBLIC_API_BASE,
     },
   },
+  app: {
+    head: {
+      title: "yushinshop - 各式服飾物品販售", // 設置網站的 title
+      meta: [
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+        },
+        {
+          name: "description",
+          content: "yushinshop 提供各式服飾物品販售，滿足您不同的需求。", // 描述文字
+        },
+        // 可以在這裡繼續添加其他的 meta 標籤
+      ],
+    },
+  },
 });

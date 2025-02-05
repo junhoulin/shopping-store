@@ -48,6 +48,12 @@ input::placeholder {
   font: inherit;
 }
 
+input:focus {
+  transform: scale(1); /* 確保焦點時不會被放大 */
+  font-size: 16px; /* 也可以再次設置，防止有些瀏覽器仍然縮放 */
+  outline: none; /* 可以移除聚焦時的邊框 */
+}
+
 .container {
   padding: 0px 15px;
 }
