@@ -1,18 +1,4 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  const showAlert = (text, icon) => {
-    const { $swal } = useNuxtApp();
-    $swal.fire({
-      text: text,
-      icon: icon,
-      confirmButtonText: "確定",
-      timer: 2000,
-      customClass: {
-        popup: "my-popup",
-        title: "my-title",
-        confirmButton: "my-button",
-      },
-    });
-  };
   const token = useCookie("auth");
   const config = useRuntimeConfig();
   if (!token.value) navigateTo("/user/login");

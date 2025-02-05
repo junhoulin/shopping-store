@@ -57,7 +57,7 @@
                       <Icon icon="mdi:eye-outline" />
                     </button>
                   </NuxtLink>
-                  <button class="btn-action">
+                  <button class="btn-action" @click="addCart(product.id)">
                     <Icon icon="solar:bag-line-duotone" />
                   </button>
                 </div>
@@ -98,10 +98,11 @@ const discount = ref(0.1);
 const sortMethod = ref("");
 const router = useRoute();
 const productName = ref("");
+const userCookie = useCookie("auth");
 
 const updateSort = (event) => {
   sortMethod.value = event.target.value;
-  getAllProduct(sortMethod.value);
+  getAllProduct(sortMethod.value, productName.value);
 };
 
 const getAllProduct = async (sortType, productType) => {
@@ -150,6 +151,39 @@ const getAllProduct = async (sortType, productType) => {
 const discountPercentage = computed(() => {
   return (discount.value * 100).toFixed(0);
 });
+
+const addCart = async (product) => {
+  if (!userCookie.value) {
+    showAlert("請先登入會員", "error");
+    return;
+  }
+
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch(`/product/getoneproduct/${product}`, {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+    const addProduct = {
+      productId: res.result._id,
+      productName: res.result.name,
+      color: `${res.result.colorType[0].color}`,
+      quantity: 1,
+      price: res.result.price,
+    };
+    await $fetch("/cart/addcart/", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      headers: {
+        Authorization: userCookie.value,
+      },
+      body: addProduct,
+    });
+    showAlert("已將產品加入購物車", "success");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 watch(
   () => router.query.name,

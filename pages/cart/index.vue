@@ -1,5 +1,15 @@
 <template>
   <GlobalHeader />
+  <ClientOnly>
+    <loading v-model:active="isLoading">
+      <div class="loadingio-spinner-dual-ring-nq4q5u6dq7r">
+        <div class="ldio-x2uulkbinbj">
+          <div></div>
+          <div><div></div></div>
+        </div>
+      </div>
+    </loading>
+  </ClientOnly>
   <div class="container">
     <div class="shopping-cart animate__animated animate__fadeIn">
       <h2>購物車</h2>
@@ -10,62 +20,32 @@
               <th>編輯</th>
               <th>圖片</th>
               <th>名稱</th>
+              <th>顏色</th>
               <th>價格</th>
               <th>數量</th>
               <th>總價</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr v-for="(item, index) in userCart" :key="index">
               <td>
-                <button><Icon icon="tabler:trash" /></button>
+                <button @click="deleteCart(item.productId, item.color)">
+                  <Icon icon="tabler:trash" />
+                </button>
               </td>
               <td>
                 <img src="~public/images/products/jacket-1.jpg" alt="" />
               </td>
-              <td>asdasadadasdsd超無敵超屌超寶款冬季最新宇宙無敵霹靂夾克</td>
-              <td>$12,000</td>
+              <td>{{ item.productName }}</td>
+              <td>{{ item.color }}</td>
               <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$96,000</td>
-            </tr>
-            <tr>
-              <td>
-                <button><Icon icon="tabler:trash" /></button>
+                <span class="originprice">${{ item.price }}</span>
+                <br />${{ item.discountPrice }}
               </td>
               <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
+                <input :value="item.quantity" type="number" />
               </td>
-              <td>asdasadadasdsd夾克</td>
-              <td>$1270</td>
-              <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$240</td>
-            </tr>
-            <tr>
-              <td>
-                <button><Icon icon="tabler:trash" /></button>
-              </td>
-              <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
-              </td>
-              <td>asdasadadasdsd夾克</td>
-              <td>$120</td>
-              <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$240</td>
+              <td>${{ item.discountTotal || item.total }}</td>
             </tr>
           </tbody>
         </table>
@@ -117,12 +97,67 @@
 definePageMeta({
   middleware: "user-login",
 });
+const isLoading = ref(false);
+const discount = ref(0.1);
+const userCookie = useCookie("auth");
+const userCart = ref([]);
+const getCart = async () => {
+  isLoading.value = true;
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/cart/cartlist", {
+      baseURL: config.public.apiBase,
+      headers: {
+        Authorization: userCookie.value,
+      },
+    });
+    if (discount) {
+      userCart.value = res.cart[0].cartList.map((item) => {
+        const discountPrice = (item.price * (1 - discount.value)).toFixed(0);
+        const discountTotal = discountPrice * item.quantity;
+        return {
+          ...item,
+          discountPrice: discountPrice,
+          discountTotal: discountTotal,
+        };
+      });
+    } else {
+      userCart.value = res.cart[0].cartList;
+    }
+    isLoading.value = false;
+  } catch (error) {
+    console.log(error);
+    isLoading.value = false;
+  }
+};
 
-const userCookie = useCookie("auth", {
-  path: "/",
+const deleteCart = async (id, color) => {
+  isLoading.value = true;
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/cart/deletecart", {
+      baseURL: config.public.apiBase,
+      method: "delete",
+      headers: {
+        Authorization: userCookie.value,
+      },
+      body: {
+        productId: id,
+        color: color,
+      },
+    });
+    console.log(res);
+    await getCart();
+    isLoading.value = false;
+  } catch (error) {
+    isLoading.value = false;
+    console.log(error);
+  }
+};
+
+onMounted(() => {
+  getCart();
 });
-
-console.log(userCookie);
 </script>
 
 <style lang="scss" scoped>
@@ -165,6 +200,19 @@ td img {
 td button {
   display: block;
   margin: 0 auto;
+}
+
+td input {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.originprice {
+  color: $davys-gray;
+  text-decoration: line-through;
+  text-decoration-color: $davys-gray;
 }
 
 .shopping-cart {

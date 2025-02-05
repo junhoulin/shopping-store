@@ -178,22 +178,6 @@ const loginOut = () => {
   router.push("/user/login");
   showAlert("登出成功", "success");
 };
-
-// 提示框
-const showAlert = (text, icon) => {
-  const { $swal } = useNuxtApp();
-  $swal.fire({
-    text: text,
-    icon: icon,
-    confirmButtonText: "確定",
-    timer: 2000,
-    customClass: {
-      popup: "my-popup",
-      title: "my-title",
-      confirmButton: "my-button",
-    },
-  });
-};
 </script>
 
 <style lang="scss" scoped>
