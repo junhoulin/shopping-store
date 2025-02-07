@@ -5,11 +5,15 @@
       <div class="product-showcase">
         <h2 class="title">New Arrivals</h2>
         <div class="showcase-wrapper has-scrollbar">
-          <div class="showcase-container">
-            <div class="showcase">
+          <div
+            class="showcase-container"
+            v-for="(items, index) in product1"
+            :key="index"
+          >
+            <div class="showcase" v-for="(item, index) in items" :key="index">
               <a href="#" class="showcase-img-box">
                 <img
-                  src="~public/images/products/clothes-1.jpg"
+                  :src="item.imageUrl"
                   alt="睡衣"
                   class="showcase-img"
                   width="70"
@@ -17,242 +21,14 @@
               </a>
               <div class="showcase-content">
                 <a href="#">
-                  <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
-                  </h4>
+                  <h4 class="showcase-title">{{ item.name }}</h4>
                 </a>
-                <a href="#" class="showcase-category">Clothes</a>
+                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
                 <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="showcase-container">
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-1.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="showcase-container">
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-1.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
+                  <p class="price">
+                    ${{ (item.price * (1 - discount)).toFixed(0) }}
+                  </p>
+                  <del>${{ item.price }}</del>
                 </div>
               </div>
             </div>
@@ -262,11 +38,15 @@
       <div class="product-showcase">
         <h2 class="title">Trending</h2>
         <div class="showcase-wrapper has-scrollbar">
-          <div class="showcase-container">
-            <div class="showcase">
+          <div
+            class="showcase-container"
+            v-for="(items, index) in product2"
+            :key="index"
+          >
+            <div class="showcase" v-for="(item, index) in items" :key="index">
               <a href="#" class="showcase-img-box">
                 <img
-                  src="~public/images/products/clothes-1.jpg"
+                  :src="item.imageUrl"
                   alt="睡衣"
                   class="showcase-img"
                   width="70"
@@ -275,157 +55,15 @@
               <div class="showcase-content">
                 <a href="#">
                   <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
+                    {{ item.name }}
                   </h4>
                 </a>
-                <a href="#" class="showcase-category">Clothes</a>
+                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
                 <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="showcase-container">
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-1.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
+                  <p class="price">
+                    ${{ (item.price * (1 - discount)).toFixed(0) }}
+                  </p>
+                  <del>${{ item.price }}</del>
                 </div>
               </div>
             </div>
@@ -435,11 +73,15 @@
       <div class="product-showcase">
         <h2 class="title">Top Rated</h2>
         <div class="showcase-wrapper has-scrollbar">
-          <div class="showcase-container">
-            <div class="showcase">
+          <div
+            class="showcase-container"
+            v-for="(items, index) in product3"
+            :key="index"
+          >
+            <div class="showcase" v-for="(item, index) in items" :key="index">
               <a href="#" class="showcase-img-box">
                 <img
-                  src="~public/images/products/clothes-1.jpg"
+                  :src="item.imageUrl"
                   alt="睡衣"
                   class="showcase-img"
                   width="70"
@@ -448,157 +90,15 @@
               <div class="showcase-content">
                 <a href="#">
                   <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
+                    {{ item.name }}
                   </h4>
                 </a>
-                <a href="#" class="showcase-category">Clothes</a>
+                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
                 <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="showcase-container">
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-1.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    Relaxed Short full Sleeve T-Shirt
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$45.00</p>
-                  <del>$12.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-2.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$215.00</p>
-                  <del>$233.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-3.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Clothes</a>
-                <div class="price-box">
-                  <p class="price">$76.00</p>
-                  <del>76.00</del>
-                </div>
-              </div>
-            </div>
-            <div class="showcase">
-              <a href="#" class="showcase-img-box">
-                <img
-                  src="~public/images/products/clothes-4.jpg"
-                  alt="睡衣"
-                  class="showcase-img"
-                  width="70"
-                />
-              </a>
-              <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">Pure Garment Dyed Cotton Shirt</h4>
-                </a>
-                <a href="#" class="showcase-category">Mens Fashion</a>
-                <div class="price-box">
-                  <p class="price">$68.00</p>
-                  <del>$33.00</del>
+                  <p class="price">
+                    ${{ (item.price * (1 - discount)).toFixed(0) }}
+                  </p>
+                  <del>{{ item.price }}</del>
                 </div>
               </div>
             </div>
@@ -740,41 +240,40 @@
     </div>
     <!-- 產品網格 -->
     <div class="product-main">
-      <div class="title">New Produxt</div>
+      <div class="title">全部商品</div>
       <div class="product-grid">
-        <div class="showcase">
+        <div class="showcase" v-for="(item, index) in allProduct" :key="index">
           <div class="showcase-banner">
             <img
-              src="~public/images/products/jacket-3.jpg"
+              :src="item.imageUrl"
               alt="男生冬天的外套"
               class="product-img default"
               width="300"
             />
             <img
-              src="~public/images/products/jacket-4.jpg"
+              :src="item.imageUrl"
               alt="男生冬天的外套"
               class="product-img hover"
               width="300"
             />
-            <div class="showcase-badge">15%</div>
+            <div class="showcase-badge">10%</div>
             <div class="showcase-actions">
               <button class="btn-action">
                 <Icon icon="mdi:heart-outline" />
               </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
+              <NuxtLink :to="`/product/${item.id}`">
+                <button class="btn-action">
+                  <Icon icon="mdi:eye-outline" />
+                </button>
+              </NuxtLink>
+              <button class="btn-action" @click="addCart(item.id)">
                 <Icon icon="solar:bag-line-duotone" />
               </button>
             </div>
           </div>
           <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
+            <a href="#" class="showcase-category">{{ item.name }}</a>
+            <a href="#" class="showcase-title">{{ item.descriptionList[0] }}</a>
             <div class="showcase-rating">
               <Icon icon="material-symbols:star-rounded" />
               <Icon icon="material-symbols:star-rounded" />
@@ -783,238 +282,10 @@
               <Icon icon="material-symbols:star-rounded" />
             </div>
             <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
-            </div>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="showcase-banner">
-            <img
-              src="~public/images/products/jacket-3.jpg"
-              alt="男生冬天的外套"
-              class="product-img default"
-              width="300"
-            />
-            <img
-              src="~public/images/products/jacket-4.jpg"
-              alt="男生冬天的外套"
-              class="product-img hover"
-              width="300"
-            />
-            <div class="showcase-badge">15%</div>
-            <div class="showcase-actions">
-              <button class="btn-action">
-                <Icon icon="mdi:heart-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="solar:bag-line-duotone" />
-              </button>
-            </div>
-          </div>
-          <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
-            <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-            </div>
-            <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
-            </div>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="showcase-banner">
-            <img
-              src="~public/images/products/jacket-3.jpg"
-              alt="男生冬天的外套"
-              class="product-img default"
-              width="300"
-            />
-            <img
-              src="~public/images/products/jacket-4.jpg"
-              alt="男生冬天的外套"
-              class="product-img hover"
-              width="300"
-            />
-            <div class="showcase-badge">15%</div>
-            <div class="showcase-actions">
-              <button class="btn-action">
-                <Icon icon="mdi:heart-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="solar:bag-line-duotone" />
-              </button>
-            </div>
-          </div>
-          <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
-            <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-            </div>
-            <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
-            </div>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="showcase-banner">
-            <img
-              src="~public/images/products/jacket-3.jpg"
-              alt="男生冬天的外套"
-              class="product-img default"
-              width="300"
-            />
-            <img
-              src="~public/images/products/jacket-4.jpg"
-              alt="男生冬天的外套"
-              class="product-img hover"
-              width="300"
-            />
-            <div class="showcase-badge">15%</div>
-            <div class="showcase-actions">
-              <button class="btn-action">
-                <Icon icon="mdi:heart-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="solar:bag-line-duotone" />
-              </button>
-            </div>
-          </div>
-          <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
-            <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-            </div>
-            <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
-            </div>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="showcase-banner">
-            <img
-              src="~public/images/products/jacket-3.jpg"
-              alt="男生冬天的外套"
-              class="product-img default"
-              width="300"
-            />
-            <img
-              src="~public/images/products/jacket-4.jpg"
-              alt="男生冬天的外套"
-              class="product-img hover"
-              width="300"
-            />
-            <div class="showcase-badge">15%</div>
-            <div class="showcase-actions">
-              <button class="btn-action">
-                <Icon icon="mdi:heart-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="solar:bag-line-duotone" />
-              </button>
-            </div>
-          </div>
-          <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
-            <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-            </div>
-            <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
-            </div>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="showcase-banner">
-            <img
-              src="~public/images/products/jacket-3.jpg"
-              alt="男生冬天的外套"
-              class="product-img default"
-              width="300"
-            />
-            <img
-              src="~public/images/products/jacket-4.jpg"
-              alt="男生冬天的外套"
-              class="product-img hover"
-              width="300"
-            />
-            <div class="showcase-badge">15%</div>
-            <div class="showcase-actions">
-              <button class="btn-action">
-                <Icon icon="mdi:heart-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="mdi:eye-outline" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="material-symbols:repeat-rounded" />
-              </button>
-              <button class="btn-action">
-                <Icon icon="solar:bag-line-duotone" />
-              </button>
-            </div>
-          </div>
-          <div class="showcase-content">
-            <a href="#" class="showcase-category">jacket</a>
-            <a href="#" class="showcase-title">Mens Winter Leathers Jaclets</a>
-            <div class="showcase-rating">
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-              <Icon icon="material-symbols:star-rounded" />
-            </div>
-            <div class="price-box">
-              <p class="price">$ 48.00</p>
-              <del>$75.00</del>
+              <p class="price">
+                ${{ (item.price * (1 - discount)).toFixed(0) }}
+              </p>
+              <del>${{ item.price }}</del>
             </div>
           </div>
         </div>
@@ -1023,7 +294,100 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const userCookie = useCookie("auth");
+const allProduct = ref([]);
+const product1 = ref([]);
+const product2 = ref([]);
+const product3 = ref([]);
+const discount = ref(0.1);
+
+// **分割陣列成每 4 個一組**
+const chunkArray = (array, size) => {
+  return array.reduce((acc, item, index) => {
+    const chunkIndex = Math.floor(index / size);
+    if (!acc[chunkIndex]) acc[chunkIndex] = [];
+    acc[chunkIndex].push(item);
+    return acc;
+  }, []);
+};
+
+const getAllProduct = async (dataname, productType) => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/product/productlist", {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+    console.log(res.result);
+    let products = res.result.map((product) => ({
+      id: product._id,
+      name: product.name,
+      descriptionList: product.descriptionList || [],
+      category: product.category || [],
+      price: product.price,
+      imageUrl: product.imageUrl,
+      colorType: product.colorType || [],
+    }));
+    // 如果 productType 有值，篩選 category 包含該類別的產品
+    if (productType) {
+      console.log("🔍 篩選 productType:", productType);
+      products = products.filter((product) =>
+        product.category.includes(productType)
+      );
+      const chunkedProducts = chunkArray(products, 4);
+      dataname.value = chunkedProducts;
+      console.log(dataname.value);
+    } else {
+      allProduct.value = products;
+      console.log(allProduct.value);
+    }
+  } catch (error) {
+    console.log(error);
+    isLoading.value = false;
+  }
+};
+
+const addCart = async (product) => {
+  if (!userCookie.value) {
+    showAlert("請先登入會員", "error");
+    return;
+  }
+
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch(`/product/getoneproduct/${product}`, {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+    const addProduct = {
+      productId: res.result._id,
+      productName: res.result.name,
+      color: `${res.result.colorType[0].color}`,
+      quantity: 1,
+      price: res.result.price,
+    };
+    await $fetch("/cart/addcart/", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      headers: {
+        Authorization: userCookie.value,
+      },
+      body: addProduct,
+    });
+    showAlert("已將產品加入購物車", "success");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+onMounted(() => {
+  getAllProduct();
+  getAllProduct(product1, "長袖襯衫");
+  getAllProduct(product2, "長袖上衣");
+  getAllProduct(product3, "外套");
+});
+</script>
 
 <style lang="scss" scoped>
 @use "~/assets/styles/variables" as *;
