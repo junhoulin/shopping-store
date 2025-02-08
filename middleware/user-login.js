@@ -9,7 +9,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       Authorization: token.value,
     },
   }).catch((error) => {
-    showAlert(`${error.data.message}`, "error");
+    showAlert(`${error.data.message}`, "info");
   });
   if (userInfo?.status !== undefined) {
     // 驗證成功，終止函式執行

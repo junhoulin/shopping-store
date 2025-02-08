@@ -43,7 +43,7 @@
                 <br />${{ item.discountPrice }}
               </td>
               <td>
-                <input :value="item.quantity" type="number" />
+                <input :value="item.quantity" type="number" min="1" />
               </td>
               <td>${{ item.discountTotal || item.total }}</td>
             </tr>
