@@ -1,6 +1,7 @@
 <template>
   <Modal />
   <div class="main">
+    <ButtonTop />
     <GlobalHeader />
     <ClientOnly>
       <loading v-model:active="isLoading">
