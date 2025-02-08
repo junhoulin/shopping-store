@@ -7,7 +7,7 @@
       >
         <div class="sidebar-category">
           <div class="sidebar-top">
-            <h2 class="sidebar-title">Category</h2>
+            <h2 class="sidebar-title">商品分類</h2>
             <button class="sidebar-close-btn" @click="updateList4">
               <Icon icon="material-symbols:close" />
             </button>
@@ -26,7 +26,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Clothes</p>
+                  <p class="menu-title">潮流服飾</p>
                 </div>
                 <div>
                   <Icon
@@ -46,36 +46,37 @@
                 :class="{ active: activeMenu.list1 }"
               >
                 <li class="sidebar-submenu-category">
-                  <a href="" class="sidebar-submenu-title">
-                    <p class="product-name">Shirt</p>
-                    <data value="300" class="stock" title="Available Stock"
-                      >300</data
-                    >
-                  </a>
+                  <NuxtLink
+                    class="sidebar-submenu-title"
+                    :to="{ path: '/product/', query: { name: '長袖襯衫' } }"
+                  >
+                    <p class="product-name">長袖襯衫</p>
+                    <data value="300" class="stock" title="Available Stock">{{
+                      ProductMount2
+                    }}</data>
+                  </NuxtLink>
                 </li>
                 <li class="sidebar-submenu-category">
-                  <a href="#" class="sidebar-submenu-title">
-                    <p class="product-name">Shorts & Jeans</p>
-                    <data value="60" class="stock" title="Available Stock"
-                      >60</data
-                    >
-                  </a>
+                  <NuxtLink
+                    class="sidebar-submenu-title"
+                    :to="{ path: '/product/', query: { name: '長袖上衣' } }"
+                  >
+                    <p class="product-name">長袖上衣</p>
+                    <data value="60" class="stock" title="Available Stock">{{
+                      ProductMount3
+                    }}</data>
+                  </NuxtLink>
                 </li>
                 <li class="sidebar-submenu-category">
-                  <a href="#" class="sidebar-submenu-title">
-                    <p class="product-name">Jacket</p>
-                    <data value="50" class="stock" title="Available Stock"
-                      >50</data
-                    >
-                  </a>
-                </li>
-                <li class="sidebar-submenu-category">
-                  <a href="#" class="sidebar-submenu-title">
-                    <p class="product-name">Dress & Frock</p>
-                    <data value="87" class="stock" title="Available Stock"
-                      >87</data
-                    >
-                  </a>
+                  <NuxtLink
+                    class="sidebar-submenu-title"
+                    :to="{ path: '/product/', query: { name: '外套' } }"
+                  >
+                    <p class="product-name">外套</p>
+                    <data value="50" class="stock" title="Available Stock">{{
+                      ProductMount1
+                    }}</data>
+                  </NuxtLink>
                 </li>
               </ul>
             </li>
@@ -92,7 +93,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Footwear</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -162,7 +163,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">jewelry</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -232,7 +233,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Perfume</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -302,7 +303,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Cosmetics</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -372,7 +373,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Glasses</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -442,7 +443,7 @@
                     width="20"
                     height="20"
                   />
-                  <p class="menu-title">Bags</p>
+                  <p class="menu-title">敬請期待</p>
                 </div>
                 <div>
                   <Icon
@@ -502,13 +503,17 @@
           </ul>
         </div>
         <div class="product-showcase">
-          <h3 class="showcase-heading">best sellers</h3>
+          <h3 class="showcase-heading">大家都在買</h3>
           <div class="showcase-wrapper">
             <div class="showcase-container">
-              <div class="showcase">
+              <div
+                class="showcase"
+                v-for="(item, index) in productBest"
+                :key="index"
+              >
                 <a href="#" class="showcase-img-box">
                   <img
-                    src="~public/images/products/1.jpg"
+                    :src="item.imageUrl"
                     alt="baby fabric shoes"
                     class="showcase-img"
                     width="75"
@@ -517,7 +522,9 @@
                 </a>
                 <div class="showcase-content">
                   <a href="#">
-                    <h4 class="showcase-title">baby fabric shoes</h4>
+                    <NuxtLink :to="`/product/${item.id}`">
+                      <h4 class="showcase-title">{{ item.name }}</h4>
+                    </NuxtLink>
                   </a>
                   <div class="showcase-rating">
                     <Icon icon="material-symbols:star-rounded" />
@@ -527,89 +534,10 @@
                     <Icon icon="material-symbols:star-rounded" />
                   </div>
                   <div class="price-box">
-                    <del>$5.00</del>
-                    <p class="price">4.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="showcase">
-                <a href="#" class="showcase-img-box">
-                  <img
-                    src="~public/images/products/2.jpg"
-                    alt="baby fabric shoes"
-                    class="showcase-img"
-                    width="75"
-                    height="75"
-                  />
-                </a>
-                <div class="showcase-content">
-                  <a href="#">
-                    <h4 class="showcase-title">Men's hoodies t-shirt</h4>
-                  </a>
-                  <div class="showcase-rating">
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                  </div>
-                  <div class="price-box">
-                    <del>$5.00</del>
-                    <p class="price">4.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="showcase">
-                <a href="#" class="showcase-img-box">
-                  <img
-                    src="~public/images/products/3.jpg"
-                    alt="baby fabric shoes"
-                    class="showcase-img"
-                    width="75"
-                    height="75"
-                  />
-                </a>
-                <div class="showcase-content">
-                  <a href="#">
-                    <h4 class="showcase-title">Girls t-shirt</h4>
-                  </a>
-                  <div class="showcase-rating">
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                  </div>
-                  <div class="price-box">
-                    <del>$5.00</del>
-                    <p class="price">4.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="showcase">
-                <a href="#" class="showcase-img-box">
-                  <img
-                    src="~public/images/products/4.jpg"
-                    alt="baby fabric shoes"
-                    class="showcase-img"
-                    width="75"
-                    height="75"
-                  />
-                </a>
-                <div class="showcase-content">
-                  <a href="#">
-                    <h4 class="showcase-title">Woolen hat for men</h4>
-                  </a>
-                  <div class="showcase-rating">
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                    <Icon icon="material-symbols:star-rounded" />
-                  </div>
-                  <div class="price-box">
-                    <del>$5.00</del>
-                    <p class="price">4.00</p>
+                    <del>${{ item.price }}</del>
+                    <p class="price">
+                      ${{ (item.price * (1 - discount)).toFixed(0) }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -630,9 +558,11 @@ const props = defineProps({
     required: true,
   },
 });
-const updateList4 = () => {
-  emit("update:isActiveList4", false);
-};
+const discount = ref(0.1);
+const productBest = ref([]);
+const ProductMount1 = ref(0);
+const ProductMount2 = ref(0);
+const ProductMount3 = ref(0);
 //視窗的選項動畫
 //控制第一個按鈕視窗裡面的元素動畫
 const activeMenu = reactive({
@@ -644,9 +574,75 @@ const activeMenu = reactive({
   list6: false,
   list7: false,
 });
+
+const updateList4 = () => {
+  emit("update:isActiveList4", false);
+};
+
 const toggleNavMenu = (menu) => {
   activeMenu[menu] = !activeMenu[menu];
 };
+
+const getAllProduct = async (ProductMount, productType) => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/product/productlist", {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+
+    let products = res.result.map((product) => ({
+      id: product._id,
+      name: product.name,
+      category: product.category || [],
+      price: product.price,
+      imageUrl: product.imageUrl,
+      colorType: product.colorType || [],
+    }));
+    if (productType) {
+      products = products.filter((product) =>
+        product.category.includes(productType)
+      );
+    }
+    ProductMount.value = products.length;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getBestProduct = async (Best, productType) => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/product/productlist", {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+
+    let products = res.result.map((product) => ({
+      id: product._id,
+      name: product.name,
+      category: product.category || [],
+      price: product.price,
+      imageUrl: product.imageUrl,
+      colorType: product.colorType || [],
+    }));
+    if (productType) {
+      products = products.filter((product) =>
+        product.category.includes(productType)
+      );
+    }
+    Best.value = products;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+onMounted(() => {
+  getAllProduct(ProductMount1, "外套");
+  getAllProduct(ProductMount2, "長袖襯衫");
+  getAllProduct(ProductMount3, "長袖上衣");
+  getBestProduct(productBest, "外套");
+});
 </script>
 
 <style lang="scss" scoped>

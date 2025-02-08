@@ -122,10 +122,8 @@ const getAllProduct = async (sortType, productType) => {
       imageUrl: product.imageUrl,
       colorType: product.colorType || [],
     }));
-    console.log(products);
     // 如果 productType 有值，篩選 category 包含該類別的產品
     if (productType) {
-      console.log("🔍 篩選 productType:", productType);
       products = products.filter((product) =>
         product.category.includes(productType)
       );

@@ -319,7 +319,6 @@ const getAllProduct = async (dataname, productType) => {
       baseURL: config.public.apiBase,
       method: "get",
     });
-    console.log(res.result);
     let products = res.result.map((product) => ({
       id: product._id,
       name: product.name,
@@ -331,16 +330,13 @@ const getAllProduct = async (dataname, productType) => {
     }));
     // 如果 productType 有值，篩選 category 包含該類別的產品
     if (productType) {
-      console.log("🔍 篩選 productType:", productType);
       products = products.filter((product) =>
         product.category.includes(productType)
       );
       const chunkedProducts = chunkArray(products, 4);
       dataname.value = chunkedProducts;
-      console.log(dataname.value);
     } else {
       allProduct.value = products;
-      console.log(allProduct.value);
     }
   } catch (error) {
     console.log(error);
