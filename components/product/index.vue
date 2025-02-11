@@ -3,7 +3,7 @@
     <!-- 小視窗展示產品 -->
     <div class="product-minimal">
       <div class="product-showcase">
-        <h2 class="title">New Arrivals</h2>
+        <h2 class="title">最新商品</h2>
         <div class="showcase-wrapper has-scrollbar">
           <div
             class="showcase-container"
@@ -11,19 +11,23 @@
             :key="index"
           >
             <div class="showcase" v-for="(item, index) in items" :key="index">
-              <a href="#" class="showcase-img-box">
+              <NuxtLink class="showcase-img-box" :to="`/product/${item.id}`">
                 <img
                   :src="item.imageUrl"
-                  alt="睡衣"
+                  alt=""
                   class="showcase-img"
                   width="70"
                 />
-              </a>
+              </NuxtLink>
               <div class="showcase-content">
-                <a href="#">
+                <NuxtLink :to="`/product/${item.id}`">
                   <h4 class="showcase-title">{{ item.name }}</h4>
-                </a>
-                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
+                </NuxtLink>
+                <NuxtLink
+                  class="showcase-category"
+                  :to="{ path: '/product/', query: { name: item.category[0] } }"
+                  >{{ item.category[0] }}</NuxtLink
+                >
                 <div class="price-box">
                   <p class="price">
                     ${{ (item.price * (1 - discount)).toFixed(0) }}
@@ -36,7 +40,7 @@
         </div>
       </div>
       <div class="product-showcase">
-        <h2 class="title">Trending</h2>
+        <h2 class="title">特價中</h2>
         <div class="showcase-wrapper has-scrollbar">
           <div
             class="showcase-container"
@@ -44,21 +48,23 @@
             :key="index"
           >
             <div class="showcase" v-for="(item, index) in items" :key="index">
-              <a href="#" class="showcase-img-box">
+              <NuxtLink class="showcase-img-box" :to="`/product/${item.id}`">
                 <img
                   :src="item.imageUrl"
-                  alt="睡衣"
+                  alt=""
                   class="showcase-img"
                   width="70"
                 />
-              </a>
+              </NuxtLink>
               <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    {{ item.name }}
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
+                <NuxtLink :to="`/product/${item.id}`">
+                  <h4 class="showcase-title">{{ item.name }}</h4>
+                </NuxtLink>
+                <NuxtLink
+                  class="showcase-category"
+                  :to="{ path: '/product/', query: { name: item.category[0] } }"
+                  >{{ item.category[0] }}</NuxtLink
+                >
                 <div class="price-box">
                   <p class="price">
                     ${{ (item.price * (1 - discount)).toFixed(0) }}
@@ -71,7 +77,7 @@
         </div>
       </div>
       <div class="product-showcase">
-        <h2 class="title">Top Rated</h2>
+        <h2 class="title">最高銷售</h2>
         <div class="showcase-wrapper has-scrollbar">
           <div
             class="showcase-container"
@@ -79,21 +85,23 @@
             :key="index"
           >
             <div class="showcase" v-for="(item, index) in items" :key="index">
-              <a href="#" class="showcase-img-box">
+              <NuxtLink class="showcase-img-box" :to="`/product/${item.id}`">
                 <img
                   :src="item.imageUrl"
-                  alt="睡衣"
+                  alt=""
                   class="showcase-img"
                   width="70"
                 />
-              </a>
+              </NuxtLink>
               <div class="showcase-content">
-                <a href="#">
-                  <h4 class="showcase-title">
-                    {{ item.name }}
-                  </h4>
-                </a>
-                <a href="#" class="showcase-category">{{ item.category[0] }}</a>
+                <NuxtLink :to="`/product/${item.id}`">
+                  <h4 class="showcase-title">{{ item.name }}</h4>
+                </NuxtLink>
+                <NuxtLink
+                  class="showcase-category"
+                  :to="{ path: '/product/', query: { name: item.category[0] } }"
+                  >{{ item.category[0] }}</NuxtLink
+                >
                 <div class="price-box">
                   <p class="price">
                     ${{ (item.price * (1 - discount)).toFixed(0) }}
@@ -272,8 +280,8 @@
             </div>
           </div>
           <div class="showcase-content">
-            <a href="#" class="showcase-category">{{ item.name }}</a>
-            <a href="#" class="showcase-title">{{ item.descriptionList[0] }}</a>
+            <a class="showcase-category">{{ item.name }}</a>
+            <a class="showcase-title">{{ item.descriptionList[0] }}</a>
             <div class="showcase-rating">
               <Icon icon="material-symbols:star-rounded" />
               <Icon icon="material-symbols:star-rounded" />
@@ -360,7 +368,9 @@ const addCart = async (product) => {
       productId: res.result._id,
       productName: res.result.name,
       color: `${res.result.colorType[0].color}`,
+      imageUrl: res.result.imageUrl,
       quantity: 1,
+      size: "M",
       price: res.result.price,
     };
     await $fetch("/cart/addcart/", {

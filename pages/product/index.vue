@@ -63,10 +63,8 @@
                 </div>
               </div>
               <div class="showcase-content">
-                <a href="#" class="showcase-category">{{
-                  product.category.join()
-                }}</a>
-                <a href="#" class="showcase-title">{{ product.name }}</a>
+                <a class="showcase-category">{{ product.category.join() }}</a>
+                <a class="showcase-title">{{ product.name }}</a>
                 <div class="showcase-rating">
                   <Icon icon="material-symbols:star-rounded" />
                   <Icon icon="material-symbols:star-rounded" />
@@ -165,8 +163,11 @@ const addCart = async (product) => {
     const addProduct = {
       productId: res.result._id,
       productName: res.result.name,
+      imageUrl: res.result.imageUrl,
       color: `${res.result.colorType[0].color}`,
       quantity: 1,
+      size: "M",
+      imageUrl: res.result.imageUrl,
       price: res.result.price,
     };
     await $fetch("/cart/addcart/", {

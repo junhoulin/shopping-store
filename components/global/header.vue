@@ -27,7 +27,9 @@
         </ul>
 
         <div class="header-alert-news">
-          <p><b>2025冬季購物節</b> 1月到4月之間只要購買3000+即可免運</p>
+          <p>
+            <b>🎉 2025 開店慶！</b>輸入優惠碼「yushin」，結帳立享 $30 折扣！
+          </p>
         </div>
         <div class="header-top-actions">
           <div class="currency">

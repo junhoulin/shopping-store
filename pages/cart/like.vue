@@ -4,71 +4,7 @@
     <div class="shopping-cart animate__animated animate__fadeIn">
       <h2>喜好項目</h2>
       <div class="shopping-cart-product">
-        <table>
-          <thead>
-            <tr>
-              <th>編輯</th>
-              <th>圖片</th>
-              <th>名稱</th>
-              <th>價格</th>
-              <th>數量</th>
-              <th>總價</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <button><Icon icon="tabler:trash" /></button>
-              </td>
-              <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
-              </td>
-              <td>asdasadadasdsd超無敵超屌超寶款冬季最新宇宙無敵霹靂夾克</td>
-              <td>$12,000</td>
-              <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$96,000</td>
-            </tr>
-            <tr>
-              <td>
-                <button><Icon icon="tabler:trash" /></button>
-              </td>
-              <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
-              </td>
-              <td>asdasadadasdsd夾克</td>
-              <td>$1270</td>
-              <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$240</td>
-            </tr>
-            <tr>
-              <td>
-                <button><Icon icon="tabler:trash" /></button>
-              </td>
-              <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
-              </td>
-              <td>asdasadadasdsd夾克</td>
-              <td>$120</td>
-              <td>
-                <select name="" id="">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                </select>
-              </td>
-              <td>$240</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>此功能盡請期待XD</h2>
       </div>
     </div>
   </div>
@@ -130,8 +66,8 @@ td button {
 
 .shopping-cart-product {
   width: 100%;
-  table {
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
+  color: $bittersweet;
 }
 </style>

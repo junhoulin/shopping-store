@@ -20,7 +20,7 @@
               <th>編輯</th>
               <th>圖片</th>
               <th>名稱</th>
-              <th>顏色</th>
+              <th>顏色/尺寸</th>
               <th>價格</th>
               <th>數量</th>
               <th>總價</th>
@@ -29,15 +29,26 @@
           <tbody>
             <tr v-for="(item, index) in userCart" :key="index">
               <td>
-                <button @click="deleteCart(item.productId, item.color)">
+                <button
+                  @click="deleteCart(item.productId, item.color, item.size)"
+                >
                   <Icon icon="tabler:trash" />
                 </button>
               </td>
               <td>
-                <img src="~public/images/products/jacket-1.jpg" alt="" />
+                <img :src="item.imageUrl" alt="" />
               </td>
               <td>{{ item.productName }}</td>
-              <td>{{ item.color }}</td>
+              <td>
+                {{ item.color }}<br />
+                <select name="" id="">
+                  <option :value="item.size">{{ item.size }}</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+              </td>
               <td>
                 <span class="originprice">${{ item.price }}</span>
                 <br />${{ item.discountPrice }}
@@ -58,8 +69,8 @@
               <p>請輸入你的優惠券序號</p>
             </div>
             <div class="coupon-content-box">
-              <input type="text" />
-              <button>確認序號</button>
+              <input v-model="couponInput" type="text" />
+              <button @click="comfirmcoupon">確認序號</button>
             </div>
           </div>
         </div>
@@ -69,16 +80,20 @@
             <div class="total-content">
               <div class="cart-total-price">
                 <p>商品金額:</p>
-                <span>$440</span>
+                <span>${{ (totalPrice * (1 - discount)).toFixed(0) }}</span>
               </div>
               <div class="cart-total-price">
                 <p>折扣金額:</p>
-                <span>-$40</span>
+                <span>-${{ couponDiscount }}</span>
               </div>
               <hr />
               <div class="cart-total-price">
                 <p>折扣後金額</p>
-                <span>$400</span>
+                <span
+                  >${{
+                    (totalPrice * (1 - discount)).toFixed(0) - couponDiscount
+                  }}</span
+                >
               </div>
               <div class="cart-total-price">
                 <p>$</p>
@@ -97,10 +112,14 @@
 definePageMeta({
   middleware: "user-login",
 });
+const couponDiscount = ref(0);
+const coupon = ref({ name: "YUSHIN", money: 30 });
+const couponInput = ref("");
 const isLoading = ref(false);
 const discount = ref(0.1);
 const userCookie = useCookie("auth");
 const userCart = ref([]);
+const totalPrice = ref(0);
 const getCart = async () => {
   isLoading.value = true;
   try {
@@ -124,6 +143,7 @@ const getCart = async () => {
     } else {
       userCart.value = res.cart[0].cartList;
     }
+    totalPrice.value = res.cart[0].totalPrice;
     isLoading.value = false;
   } catch (error) {
     console.log(error);
@@ -131,11 +151,11 @@ const getCart = async () => {
   }
 };
 
-const deleteCart = async (id, color) => {
+const deleteCart = async (id, color, size) => {
   isLoading.value = true;
   try {
     const config = useRuntimeConfig();
-    const res = await $fetch("/cart/deletecart", {
+    await $fetch("/cart/deletecart", {
       baseURL: config.public.apiBase,
       method: "delete",
       headers: {
@@ -144,14 +164,25 @@ const deleteCart = async (id, color) => {
       body: {
         productId: id,
         color: color,
+        size: size,
       },
     });
-    console.log(res);
     await getCart();
     isLoading.value = false;
   } catch (error) {
     isLoading.value = false;
     console.log(error);
+  }
+};
+
+const comfirmcoupon = () => {
+  if (coupon.value.name === couponInput.value) {
+    couponDiscount.value = coupon.value.money;
+    showAlert("優惠碼套用成功", "success");
+  } else if (couponInput.value === "") {
+    showAlert("請輸入優惠碼", "info");
+  } else {
+    showAlert("優惠碼套用失敗", "info");
   }
 };
 
