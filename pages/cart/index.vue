@@ -112,6 +112,8 @@
 definePageMeta({
   middleware: "user-login",
 });
+const headercart = headercartStore();
+const { getHeaderCart } = headercart;
 const couponDiscount = ref(0);
 const coupon = ref({ name: "YUSHIN", money: 30 });
 const couponInput = ref("");
@@ -167,6 +169,7 @@ const deleteCart = async (id, color, size) => {
         size: size,
       },
     });
+    getHeaderCart();
     await getCart();
     isLoading.value = false;
   } catch (error) {

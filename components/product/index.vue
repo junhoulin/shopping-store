@@ -303,6 +303,8 @@
 </template>
 
 <script setup>
+const headercart = headercartStore();
+const { getHeaderCart } = headercart;
 const userCookie = useCookie("auth");
 const allProduct = ref([]);
 const product1 = ref([]);
@@ -381,6 +383,7 @@ const addCart = async (product) => {
       },
       body: addProduct,
     });
+    getHeaderCart();
     showAlert("已將產品加入購物車", "success");
   } catch (error) {
     console.log(error);

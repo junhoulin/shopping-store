@@ -83,6 +83,8 @@
 </template>
 
 <script setup>
+const headercart = headercartStore();
+const { getHeaderCart } = headercart;
 const isLoading = ref(false);
 const allProduct = ref([]);
 const allProductMount = ref(0);
@@ -171,6 +173,7 @@ const addCart = async (product) => {
       },
       body: addProduct,
     });
+    getHeaderCart();
     showAlert("已將產品加入購物車", "success");
   } catch (error) {
     console.log(error);

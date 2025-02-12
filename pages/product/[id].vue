@@ -86,6 +86,8 @@
 </template>
 
 <script setup>
+const headercart = headercartStore();
+const { getHeaderCart } = headercart;
 const currentImage = ref("");
 const imageClass = ref("product-img-main");
 const userCookie = useCookie("auth");
@@ -154,6 +156,7 @@ const addCart = async (product) => {
       },
       body: addProduct,
     });
+    getHeaderCart();
     showAlert("已將產品加入購物車", "success");
   } catch (error) {
     console.log(error);

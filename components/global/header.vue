@@ -86,7 +86,7 @@
           <NuxtLink to="/cart/">
             <div class="action-btn">
               <Icon icon="material-symbols-light:shopping-bag" />
-              <span class="count">0</span>
+              <span class="count">{{ headerShop }}</span>
             </div>
           </NuxtLink>
         </div>
@@ -256,7 +256,7 @@
             icon="material-symbols-light:shopping-bag"
             style="color: #212121"
           />
-          <span class="count" style="color: #212121">0</span>
+          <span class="count" style="color: #212121">{{ headerShop }}</span>
         </button>
       </nuxt-link>
       <nuxt-link to="/cart/like">
@@ -517,6 +517,10 @@
 </template>
 
 <script setup>
+const headercart = headercartStore();
+const { getHeaderCart } = headercart;
+const { headerShop } = storeToRefs(headercart);
+
 //控制底下導覽列按鈕的視窗
 const isActive = reactive({
   list1: false,
@@ -543,6 +547,10 @@ const activeMenu = reactive({
 const toggleNavMenu = (menu) => {
   activeMenu[menu] = !activeMenu[menu];
 };
+
+onBeforeMount(() => {
+  getHeaderCart();
+});
 </script>
 
 <style lang="scss" scoped>
