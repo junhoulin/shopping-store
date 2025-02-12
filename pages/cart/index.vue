@@ -41,7 +41,20 @@
               <td>{{ item.productName }}</td>
               <td>
                 {{ item.color }}<br />
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  @change="
+                    updateCart(
+                      item.productId,
+                      item.color,
+                      item.quantity,
+                      item.size,
+                      $event,
+                      false
+                    )
+                  "
+                >
                   <option :value="item.size">{{ item.size }}</option>
                   <option value="S">S</option>
                   <option value="M">M</option>
@@ -54,7 +67,21 @@
                 <br />${{ item.discountPrice }}
               </td>
               <td>
-                <input :value="item.quantity" type="number" min="1" />
+                <input
+                  @change="
+                    updateCart(
+                      item.productId,
+                      item.color,
+                      item.quantity,
+                      item.size,
+                      false,
+                      $event
+                    )
+                  "
+                  :value="item.quantity"
+                  type="number"
+                  min="1"
+                />
               </td>
               <td>${{ item.discountTotal || item.total }}</td>
             </tr>
@@ -112,11 +139,14 @@
 definePageMeta({
   middleware: "user-login",
 });
+//headercart狀態變更
 const headercart = headercartStore();
 const { getHeaderCart } = headercart;
+//優惠券
 const couponDiscount = ref(0);
 const coupon = ref({ name: "YUSHIN", money: 30 });
 const couponInput = ref("");
+//更改購物車系項資料
 const isLoading = ref(false);
 const discount = ref(0.1);
 const userCookie = useCookie("auth");
@@ -186,6 +216,42 @@ const comfirmcoupon = () => {
     showAlert("請輸入優惠碼", "info");
   } else {
     showAlert("優惠碼套用失敗", "info");
+  }
+};
+
+const updateCart = async (id, color, quantity, size, newSize, newQuantity) => {
+  let updateData = {};
+  if (!newQuantity) {
+    const newData = newSize.target.value;
+    updateData = {
+      productId: id,
+      quantity: quantity,
+      color: color,
+      size: newData,
+    };
+  } else {
+    const newData = newQuantity.target.value;
+    updateData = {
+      productId: id,
+      quantity: newData,
+      color: color,
+      size: size,
+    };
+  }
+
+  try {
+    const config = useRuntimeConfig();
+    await $fetch("/cart/addcart", {
+      baseURL: config.public.apiBase,
+      method: "PUT",
+      headers: {
+        Authorization: userCookie.value,
+      },
+      body: updateData,
+    });
+    await getCart();
+  } catch (error) {
+    console.log(error);
   }
 };
 
