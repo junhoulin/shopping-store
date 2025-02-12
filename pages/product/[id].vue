@@ -38,7 +38,7 @@
           <del>${{ product.price || "******" }}</del>
         </div>
         <div class="product-content-cart">
-          <select name="product-qty" id="">
+          <select v-model="inputData.quantity" name="product-qty" id="">
             <option value="" disabled selected>數量</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -46,26 +46,24 @@
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
+            <option value="7">7</option>
           </select>
-          <select name="product-sizey" id="">
+          <select v-model="inputData.size" name="product-sizey" id="">
             <option value="" disabled selected>尺寸</option>
-            <option value="size">XXL</option>
-            <option value="size">XL</option>
-            <option value="size">L</option>
-            <option value="size">M</option>
-            <option value="size">S</option>
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="S">S</option>
           </select>
-          <select name="product-sizey" id="">
+          <select v-model="inputData.color" name="product-sizey" id="">
             <option value="" disabled selected>顏色</option>
-            <option value="size">XXL</option>
-            <option value="size">XL</option>
-            <option value="size">L</option>
-            <option value="size">M</option>
-            <option value="size">S</option>
+            <option :value="color.color" v-for="color in product.colorType">
+              {{ color.color }}
+            </option>
           </select>
         </div>
         <div class="add-group">
-          <button class="add-cart-btn">加到購物車</button>
+          <button @click="addCart" class="add-cart-btn">加到購物車</button>
           <button class="add-like-btn">
             <Icon icon="mdi:heart-outline" width="24" />
           </button>
@@ -90,6 +88,13 @@
 <script setup>
 const currentImage = ref("");
 const imageClass = ref("product-img-main");
+const userCookie = useCookie("auth");
+const inputData = reactive({
+  color: "",
+  size: "",
+  quantity: 1,
+});
+
 const updateMainImage = (newImage) => {
   imageClass.value = "product-img-main";
   currentImage.value = newImage;
@@ -101,7 +106,7 @@ const updateMainImage = (newImage) => {
 //取得產品資料
 const route = useRoute();
 const productId = route.params.id;
-const product = ref([]);
+const product = ref({});
 const getOneProduct = async () => {
   try {
     const config = useRuntimeConfig();
@@ -110,8 +115,49 @@ const getOneProduct = async () => {
       method: "get",
     });
     currentImage.value = res.result.imageUrl;
-    product.value = res.result;
+    product.value = { ...res.result };
   } catch (error) {}
+};
+
+const addCart = async (product) => {
+  if (!userCookie.value) {
+    showAlert("請先登入會員", "info");
+    return;
+  } else if (!inputData.color) {
+    showAlert("請先選擇顏色", "info");
+    return;
+  } else if (!inputData.size) {
+    showAlert("請先選擇尺寸", "info");
+    return;
+  }
+
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch(`/product/getoneproduct/${productId}`, {
+      baseURL: config.public.apiBase,
+      method: "get",
+    });
+    const addProduct = {
+      productId: res.result._id,
+      productName: res.result.name,
+      imageUrl: res.result.imageUrl,
+      color: `${inputData.color}`,
+      quantity: `${inputData.quantity}`,
+      size: `${inputData.size}`,
+      price: res.result.price,
+    };
+    await $fetch("/cart/addcart/", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      headers: {
+        Authorization: userCookie.value,
+      },
+      body: addProduct,
+    });
+    showAlert("已將產品加入購物車", "success");
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 onMounted(async () => {

@@ -48,12 +48,12 @@
         </div>
         <div class="user-info">
           <ul>
-            <li><strong>帳號:</strong> yy6313531@gmail.com</li>
-            <li><strong>姓名:</strong> 林晉豪</li>
-            <li><strong>電話:</strong> (+886)78-572-009</li>
-            <li><strong>地址:</strong> 高雄市阿蓮區中正路467巷48號</li>
+            <li><strong>帳號:</strong> {{ userinfo.email }}</li>
+            <li><strong>姓名:</strong> {{ userinfo.name }}</li>
+            <li><strong>電話:</strong> {{ userinfo.phone }}</li>
+            <li><strong>地址:</strong> {{ userinfo.address }}</li>
             <li><strong>等級:</strong> 一般會員</li>
-            <li><strong>累積:</strong> 已消費NT $2000</li>
+            <li><strong>累積:</strong> 已消費NT $0</li>
             <li>差 <strong>NT $8000</strong> 可提升會員等級</li>
           </ul>
         </div>
@@ -162,8 +162,8 @@ definePageMeta({
   middleware: "user-login",
 });
 
+const userinfo = ref({});
 const router = useRouter();
-
 const activeMenu = ref("basic");
 const changeActive = (statue) => {
   activeMenu.value = statue;
@@ -173,11 +173,31 @@ const userCookie = useCookie("auth", {
   path: "/",
 });
 
+const getuserInfo = async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/user/info", {
+      baseURL: config.public.apiBase,
+      method: "get",
+      headers: {
+        Authorization: userCookie.value,
+      },
+    });
+    userinfo.value = res.userInfo;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const loginOut = () => {
   userCookie.value = "";
   router.push("/user/login");
   showAlert("登出成功", "success");
 };
+
+onMounted(() => {
+  getuserInfo();
+});
 </script>
 
 <style lang="scss" scoped>

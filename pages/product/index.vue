@@ -163,7 +163,6 @@ const addCart = async (product) => {
     const addProduct = {
       productId: res.result._id,
       productName: res.result.name,
-      imageUrl: res.result.imageUrl,
       color: `${res.result.colorType[0].color}`,
       quantity: 1,
       size: "M",
