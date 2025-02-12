@@ -52,9 +52,10 @@
             <li><strong>姓名:</strong> {{ userinfo.name }}</li>
             <li><strong>電話:</strong> {{ userinfo.phone }}</li>
             <li><strong>地址:</strong> {{ userinfo.address }}</li>
+            <li><strong>生日:</strong> {{ userinfo.birthday }}</li>
             <li><strong>等級:</strong> 一般會員</li>
             <li><strong>累積:</strong> 已消費NT $0</li>
-            <li>差 <strong>NT $8000</strong> 可提升會員等級</li>
+            <li>差 <strong>NT $10000</strong> 可提升會員等級</li>
           </ul>
         </div>
       </div>

@@ -658,7 +658,6 @@ onMounted(() => {
     top: 10px;
     right: 10px;
     font-size: 20px;
-    transform: translateX(50px);
     transition: $transition-timing;
     z-index: 3;
   }
@@ -734,9 +733,6 @@ onMounted(() => {
     }
     .product-img {
       transform: scale(1.1);
-    }
-    .showcase-actions {
-      transform: translateX(0);
     }
   }
 }

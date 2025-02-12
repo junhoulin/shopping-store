@@ -41,12 +41,6 @@
                   class="product-img default"
                   width="300"
                 />
-                <img
-                  :src="product.imageUrl"
-                  alt="男生冬天的外套"
-                  class="product-img hover"
-                  width="300"
-                />
                 <div class="showcase-badge">{{ discountPercentage }}%</div>
                 <div class="showcase-actions">
                   <button class="btn-action">
@@ -257,13 +251,6 @@ onMounted(() => {
     position: relative;
     z-index: 1;
   }
-  .product-img.hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    opacity: 0;
-  }
   .showcase-badge {
     position: absolute;
     top: 15px;
@@ -281,7 +268,6 @@ onMounted(() => {
     top: 10px;
     right: 10px;
     font-size: 20px;
-    transform: translateX(50px);
     transition: $transition-timing;
     z-index: 3;
   }
@@ -349,17 +335,8 @@ onMounted(() => {
   &:hover {
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
     transform: translateX(1px);
-    .product-img.hover {
-      opacity: 1;
-    }
-    .product-img.default {
-      opacity: 0;
-    }
     .product-img {
       transform: scale(1.1);
-    }
-    .showcase-actions {
-      transform: translateX(0);
     }
   }
 }

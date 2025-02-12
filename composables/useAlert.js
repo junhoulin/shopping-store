@@ -10,5 +10,7 @@ export const showAlert = (text, icon = "info") => {
       title: "my-title",
       confirmButton: "my-button",
     },
+    position: "center", // 讓彈窗固定在中央，避免影響頁面排版
+    backdrop: true, // 保持背景固定
   });
 };
