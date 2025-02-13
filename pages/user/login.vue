@@ -159,7 +159,7 @@
             class="search-field"
             placeholder="請輸入電話"
             v-model="signupData.phone"
-            rules="required"
+            rules="required|phone"
             name="phone"
             label="電話"
           />

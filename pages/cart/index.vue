@@ -124,7 +124,9 @@
               </div>
               <div class="cart-total-price">
                 <p>$</p>
-                <button>前往付款</button>
+                <button>
+                  <nuxt-link to="/cart/checkout">前往付款</nuxt-link>
+                </button>
               </div>
             </div>
           </div>
@@ -373,9 +375,11 @@ td input {
     justify-content: space-between;
     margin-bottom: 12px;
   }
+  a {
+    color: $cultured;
+  }
   button {
     background: $davys-gray;
-    color: $cultured;
     padding: 4px 8px;
     border-radius: $border-radius-sm;
     transition: $transition-timing;
