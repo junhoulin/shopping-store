@@ -12,33 +12,40 @@
   </ClientOnly>
   <div class="container">
     <div class="user-form animate__animated animate__fadeIn">
-      <div class="login-form" v-if="loginStatue">
+      <!-- 登入會員的表單 -->
+      <VForm class="login-form" v-if="loginStatue" @submit="login">
         <h2>登入會員</h2>
         <div class="input-box">
-          <input
+          <VField
+            name="email"
             type="text"
             class="search-field"
             placeholder="請輸入郵件"
             v-model="loginData.email"
-            required
+            rules="required|email"
+            label="郵件"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="email" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:account-outline" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
+          <VField
+            name="password"
             type="password"
             class="search-field"
             placeholder="請輸入密碼"
             v-model="loginData.password"
-            required
+            rules="required"
+            label="密碼"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="password" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:password-outline" />
-          </button>
+          </div>
         </div>
-        <button class="login-btn" @click="login">登入</button>
+        <button class="login-btn" type="submit">登入</button>
         <div class="add-fogot-link">
           <a href="#" @click.prevent="toggleStatue">加入會員</a>
           <a>|</a>
@@ -53,98 +60,119 @@
           <a href="#"><Icon icon="ic:baseline-facebook" /></a>
           <a href="#"><Icon icon="mdi:github" /></a>
         </div>
-      </div>
-      <div class="register-form" v-else>
+      </VForm>
+      <!-- 註冊會員表單 -->
+      <VForm class="register-form" v-else @submit="signup">
         <h2>加入會員</h2>
         <div class="input-box">
-          <input
+          <VField
+            name="username"
             type="text"
             class="search-field"
             placeholder="請輸入姓名"
             v-model="signupData.name"
-            required
+            rules="required"
+            label="姓名"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="username" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:account-outline" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
-            type="text"
+          <VField
+            name="email"
             class="search-field"
             placeholder="請輸入郵件"
             v-model="signupData.email"
-            required
+            rules="required|email"
+            label="郵件"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="email" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="material-symbols:account-box" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
-            type="password"
+          <VField
             class="search-field"
             placeholder="請輸入密碼"
             v-model="signupData.password"
-            required
+            rules="required|password"
+            name="password"
+            type="password"
+            label="密碼"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="password" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:password-outline" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
-            type="password"
+          <VField
+            name="confiempassword"
             class="search-field"
             placeholder="再一次輸入密碼"
-            required
+            rules="required|confirmed:@password"
+            type="password"
+            label="確認密碼"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="confiempassword" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:password-outline" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
+          <VField
             type="text"
             class="search-field"
             placeholder="請輸入地址"
             v-model="signupData.address"
-            required
+            rules="required"
+            name="address"
+            label="地址"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="address" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="entypo:address" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
+          <VField
             type="date"
             class="search-field"
             placeholder="請輸入生日"
             v-model="signupData.birthday"
             :max="today"
-            required
+            name="birthday"
+            rules="required|birthdate"
+            label="生日"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="birthday" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="mdi:birthday-cake-outline" />
-          </button>
+          </div>
         </div>
         <div class="input-box">
-          <input
+          <VField
             type="text"
             class="search-field"
             placeholder="請輸入電話"
             v-model="signupData.phone"
-            required
+            rules="required"
+            name="phone"
+            label="電話"
           />
-          <button class="acount-btn">
+          <VErrorMessage name="phone" class="error-message" />
+          <div class="acount-btn">
             <Icon icon="line-md:phone" />
-          </button>
+          </div>
         </div>
-        <button class="register-btn" @click="signup">註冊</button>
+        <button class="register-btn" type="submit">註冊</button>
         <div class="login-link">
           <a href="#" @click.prevent="toggleStatue"> 返回登入頁面</a>
         </div>
-      </div>
+      </VForm>
     </div>
   </div>
   <GlobalFooter />
@@ -322,6 +350,14 @@ h2 {
     padding: 2px 8px;
     color: $onyx;
     border-radius: $border-radius-md;
+  }
+  .error-message {
+    position: absolute; // 固定錯誤訊息的位置
+    bottom: -20px; // 確保錯誤訊息不會影響輸入框
+    left: 10px;
+    font-size: $fs-9;
+    color: red;
+    white-space: nowrap;
   }
 }
 

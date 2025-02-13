@@ -32,5 +32,13 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "@vee-validate/nuxt"],
+  veeValidate: {
+    // 修改 VeeValidate 元件的名稱
+    componentNames: {
+      Form: "VForm",
+      Field: "VField",
+      ErrorMessage: "VErrorMessage",
+    },
+  },
 });
