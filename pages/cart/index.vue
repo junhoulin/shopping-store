@@ -125,7 +125,13 @@
               <div class="cart-total-price">
                 <p>$</p>
                 <button>
-                  <nuxt-link to="/cart/checkout">前往付款</nuxt-link>
+                  <nuxt-link
+                    :to="{
+                      path: '/cart/checkout',
+                      query: { coupon: couponInput },
+                    }"
+                    >前往付款</nuxt-link
+                  >
                 </button>
               </div>
             </div>

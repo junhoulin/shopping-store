@@ -1,22 +1,54 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  const token = useCookie("auth");
+  const token = useCookie("auth", { default: () => "" });
   const config = useRuntimeConfig();
-  if (!token.value) navigateTo("/user/login");
-  const userInfo = await $fetch("/user/check", {
-    baseURL: config.public.apiBase,
-    method: "GET",
-    headers: {
-      Authorization: token.value,
-    },
-  }).catch((error) => {
-    showAlert(`${error.data.message}`, "info");
-  });
-  if (userInfo?.status !== undefined) {
-    // 驗證成功，終止函式執行
-    return;
+  const { $swal } = useNuxtApp();
+
+  if (!token.value) {
+    $swal.fire({
+      text: "請先登入會員",
+      icon: "info",
+      confirmButtonText: "確定",
+      timer: 2000,
+      customClass: {
+        popup: "my-popup",
+        title: "my-title",
+        confirmButton: "my-button",
+      },
+      position: "center",
+      backdrop: true,
+    });
+    return navigateTo("/user/login");
   }
-  // showAlert("請先登入", "error");
-  // 驗證失敗，導引回登入頁面
-  // 在伺服器端和客戶端操作路由
+
+  try {
+    const userInfo = await $fetch("/user/check", {
+      baseURL: config.public.apiBase,
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
+
+    if (userInfo?.status !== undefined) {
+      return;
+    }
+  } catch (error) {
+    if (process.client) {
+      $swal.fire({
+        text: `${error.message}`,
+        icon: "info",
+        confirmButtonText: "確定",
+        timer: 2000,
+        customClass: {
+          popup: "my-popup",
+          title: "my-title",
+          confirmButton: "my-button",
+        },
+        position: "center",
+        backdrop: true,
+      });
+    }
+  }
+
   return navigateTo("/user/login");
 });
