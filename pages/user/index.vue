@@ -70,45 +70,28 @@
               <th>訂單編號</th>
               <th>訂單內容</th>
               <th>總價</th>
+              <th>付款狀態</th>
               <th>出貨狀態</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>pe3r48545a26rwt46re5t4r5e6</td>
+            <tr v-for="(item, index) in userorder" :key="index">
+              <td>{{ item._id }}</td>
               <td>
                 <ul>
-                  <li>襯衫(紅色) $400* 1 $400</li>
-                  <li>衣服(長袖) $300 * 3 $900</li>
-                  <li>衣服(長袖) $1200 * 3 $3600</li>
+                  <li v-for="(cart, index) in item.cartList" :key="index">
+                    {{ cart.productName }}({{ cart.color }}) ${{
+                      (cart.price * (1 - discount)).toFixed(0)
+                    }}*
+                    {{ cart.quantity }}
+                  </li>
                 </ul>
               </td>
-              <td>1300</td>
-              <td>已出貨</td>
-            </tr>
-            <tr>
-              <td>pe3r48545a26rwt46re5t4r5e6</td>
-              <td>
-                <ul>
-                  <li>襯衫(紅色) $400* 1 $400</li>
-                  <li>衣服(長袖) $300 * 3 $900</li>
-                  <li>衣服(長袖) $1200 * 3 $3600</li>
-                </ul>
-              </td>
-              <td>1300</td>
-              <td>出貨中</td>
-            </tr>
-            <tr>
-              <td>pe3r48545a26rwt46re5t4r5e6</td>
-              <td>
-                <ul>
-                  <li>襯衫(紅色) $400* 1 $400</li>
-                  <li>衣服(長袖) $300 * 3 $900</li>
-                  <li>衣服(長袖) $1200 * 3 $3600</li>
-                </ul>
-              </td>
-              <td>1300</td>
-              <td>已收訂單</td>
+              <td>{{ item.totalPrice }}</td>
+              <td v-if="item.payFinal">已付款</td>
+              <td v-else="item.payFinal" style="color: brown">未付款</td>
+              <td v-if="item.isShip">已出貨</td>
+              <td v-else="item.isShip" style="color: brown">未出貨</td>
             </tr>
           </tbody>
         </table>
@@ -162,7 +145,8 @@
 definePageMeta({
   middleware: "user-login",
 });
-
+const discount = ref(0.1);
+const userorder = ref({});
 const userinfo = ref({});
 const router = useRouter();
 const activeMenu = ref("basic");
@@ -190,6 +174,23 @@ const getuserInfo = async () => {
   }
 };
 
+const getOrder = async () => {
+  try {
+    const config = useRuntimeConfig();
+    const res = await $fetch("/order/getorder", {
+      baseURL: config.public.apiBase,
+      method: "post",
+      headers: {
+        Authorization: userCookie.value,
+      },
+    });
+    userorder.value = res.order[0].orderList;
+    console.log(userorder.value);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const loginOut = () => {
   userCookie.value = "";
   router.push("/user/login");
@@ -198,6 +199,7 @@ const loginOut = () => {
 
 onMounted(() => {
   getuserInfo();
+  getOrder();
 });
 </script>
 

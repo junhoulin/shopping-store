@@ -259,7 +259,8 @@
 </template>
 
 <script setup>
-const router = useRoute();
+const router = useRouter();
+const route = useRoute();
 const userCookie = useCookie("auth");
 const isLoading = ref(false);
 const selectedArea = ref("");
@@ -335,8 +336,8 @@ const getCart = async () => {
 };
 
 const comfirmcoupon = () => {
-  if (router.query.coupon) {
-    if (coupon.value.name === router.query.coupon) {
+  if (route.query.coupon) {
+    if (coupon.value.name === route.query.coupon) {
       finalPrice.value = totalPrice.value - coupon.value.money;
       couponDiscount.value = coupon.value.money;
     }
@@ -356,8 +357,8 @@ watch(selectedShipping, (newShipping) => {
   }
 
   // 根據優惠券重新計算價格
-  if (router.query.coupon) {
-    if (coupon.value.name === router.query.coupon) {
+  if (route.query.coupon) {
+    if (coupon.value.name === route.query.coupon) {
       finalPrice.value = totalPrice.value - coupon.value.money + ShipCost.value;
       couponDiscount.value = coupon.value.money;
     } else {
@@ -369,19 +370,19 @@ watch(selectedShipping, (newShipping) => {
 });
 
 const creatOrder = async () => {
-  if (selectedArea.value == "") {
+  if (!selectedArea.value) {
     showAlert("請勾選寄送地區", "info");
     return;
-  } else if (selectedShipping.value == "") {
-    showAlert("請勾選寄送地區", "info");
+  }
+  if (!selectedShipping.value) {
+    showAlert("請勾選寄送方式", "info");
     return;
-  } else if (selectPay.value == "") {
+  }
+  if (!selectPay.value) {
     showAlert("請勾選付款方式", "info");
     return;
-  } else if (
-    selectPay.value == "超商取貨付款" ||
-    selectPay.value == "linepay"
-  ) {
+  }
+  if (["超商取貨付款", "linepay"].includes(selectPay.value)) {
     showAlert("此付款方式未開放", "info");
     return;
   }
@@ -404,16 +405,39 @@ const creatOrder = async () => {
 
   try {
     const config = useRuntimeConfig();
-    await $fetch("/order/addorder", {
-      method: "post",
+
+    // 1. 建立訂單
+    const orderResponse = await $fetch("/order/addorder", {
+      method: "POST",
       baseURL: config.public.apiBase,
       headers: {
         Authorization: userCookie.value,
       },
       body: { ...orderInfo },
     });
+
+    if (!orderResponse) {
+      showAlert("訂單建立失敗，請稍後再試", "error");
+      return;
+    } else {
+      showAlert("訂單建立成功", "success");
+    }
+
+    const paymentResponse = await $fetch("https://test.yushinshop.com/", {
+      method: "POST",
+    });
+
+    // 假設返回的是一個 HTML 片段，使用 iframe 或直接插入到 DOM 中
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.srcdoc = paymentResponse; // 假設這是 HTML 內容
+    document.body.appendChild(iframe);
+    iframe.onload = () => {
+      iframe.contentWindow.document.querySelector("form").submit(); // 提交表單
+    };
   } catch (error) {
-    console.log(error);
+    console.error("創建訂單時發生錯誤：", error);
+    showAlert("系統發生錯誤，請稍後再試", "error");
   }
 };
 
@@ -596,7 +620,7 @@ onMounted(async () => {
 }
 
 .shopping-cart-product img {
-  max-width: 60px; /* 限制圖片大小 */
+  max-width: 40px; /* 限制圖片大小 */
   height: auto;
   margin: auto;
 }
@@ -631,6 +655,12 @@ onMounted(async () => {
   }
   .finalbottom button {
     width: 40%;
+  }
+
+  .shopping-cart-product img {
+    max-width: 60px; /* 限制圖片大小 */
+    height: auto;
+    margin: auto;
   }
 }
 </style>
