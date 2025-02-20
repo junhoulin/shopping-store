@@ -425,16 +425,28 @@ const creatOrder = async () => {
 
     const paymentResponse = await $fetch("https://test.yushinshop.com/", {
       method: "POST",
+      body: {
+        totalAmount: finalPrice.value,
+        itemName: "YUSHIN潮流服飾",
+      },
     });
+    if (!paymentResponse || typeof paymentResponse !== "string") {
+      showAlert("無法獲取支付頁面，請稍後再試", "error");
+      return;
+    }
 
-    // 假設返回的是一個 HTML 片段，使用 iframe 或直接插入到 DOM 中
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.srcdoc = paymentResponse; // 假設這是 HTML 內容
-    document.body.appendChild(iframe);
-    iframe.onload = () => {
-      iframe.contentWindow.document.querySelector("form").submit(); // 提交表單
-    };
+    // 3. 建立一個 div 來插入 HTML 並自動執行
+    const paymentContainer = document.createElement("div");
+    paymentContainer.innerHTML = paymentResponse;
+    document.body.appendChild(paymentContainer);
+
+    // 4. 手動提交表單
+    const paymentForm = paymentContainer.querySelector("form");
+    if (paymentForm) {
+      paymentForm.submit();
+    } else {
+      showAlert("支付表單錯誤，請稍後再試", "error");
+    }
   } catch (error) {
     console.error("創建訂單時發生錯誤：", error);
     showAlert("系統發生錯誤，請稍後再試", "error");
