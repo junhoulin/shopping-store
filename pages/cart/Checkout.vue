@@ -405,7 +405,7 @@ const creatOrder = async () => {
 
   try {
     const config = useRuntimeConfig();
-
+    let lastOrder = {};
     // 1. 建立訂單
     const orderResponse = await $fetch("/order/addorder", {
       method: "POST",
@@ -420,6 +420,9 @@ const creatOrder = async () => {
       showAlert("訂單建立失敗，請稍後再試", "error");
       return;
     } else {
+      lastOrder =
+        orderResponse.order.orderList[orderResponse.order.orderList.length - 1];
+      console.log(lastOrder);
       showAlert("訂單建立成功", "success");
     }
 
@@ -428,6 +431,7 @@ const creatOrder = async () => {
       body: {
         totalAmount: finalPrice.value,
         itemName: "YUSHIN潮流服飾",
+        id: lastOrder._id,
       },
     });
     if (!paymentResponse || typeof paymentResponse !== "string") {
