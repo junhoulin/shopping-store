@@ -1,6 +1,6 @@
 ## 🔗 前端程式設計架構圖
 
-![Frontend Architecture](https://temp-picture.s3.ap-northeast-1.amazonaws.com/shopping-store-img/banner.png)
+![程式主頁](https://temp-picture.s3.ap-northeast-1.amazonaws.com/shopping-store-img/banner.png)
 
 # 🌝 專案目標
 
